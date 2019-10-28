@@ -1,7 +1,7 @@
 	
 	<footer></footer>
 		<?php wp_footer(); ?>
-		</div><!-- container -->
+		</div><!-- .container -->
 	</body>
 
 </html>

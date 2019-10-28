@@ -1,0 +1,25 @@
+{
+  "name": "Woblii",
+  "version": "1.0.0",
+  "description": "Woblii WP custom theme.",
+  "scripts": {
+    "css": "node-sass --output-style compressed --include-path scss assets/css/source.css style.css",
+    "watch": "npx tailwind build assets/css/source.css -o style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MusicForMyself/Woblii"
+  },
+  "author": "John Falcon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MusicForMyself/Woblii"
+  },
+  "homepage": "https://github.com/MusicForMyself/Woblii#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "postcss-import": "^12.0.1",
+    "tailwindcss": "^1.1.3"
+  }
+}

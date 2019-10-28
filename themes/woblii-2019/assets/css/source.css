@@ -1,0 +1,31 @@
+/*!
+Theme Name: Woblii 2019
+Theme URI:
+Author: John Falcon
+Author URI: http://pixelton.xyz
+Description: Tema de WordPress Personalizado
+Version: 1.0
+*/
+
+@charset "utf-8";
+
+@tailwind base;
+
+.__inputBase{
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-purple-text leading-tight;
+}
+
+.__inputBase:focus {
+    @apply outline-none shadow-outline;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+/*._header{*/
+/*    .logo{*/
+/*        display: block;*/
+/*        width: 300px;*/
+/*    }*/
+/*}*/

@@ -7,7 +7,7 @@
 
 	define( 'JSPATH', get_template_directory_uri() . '/js/' );
 
-	define( 'CSSPATH', get_template_directory_uri() . '/css/' );
+	define( 'CSSPATH', get_template_directory_uri() . '/assets/css/' );
 
 	define( 'THEMEPATH', get_template_directory_uri() . '/' );
 	
@@ -48,7 +48,7 @@
 		wp_localize_script( 'admin-js', 'ajax_url', admin_url('admin-ajax.php') );
 
 		// styles
-		wp_enqueue_style( 'admin-css', CSSPATH.'admin.css' );
+		wp_enqueue_style( 'admin-assets', CSSPATH.'admin.css' );
 
 	});
 
@@ -58,17 +58,17 @@
 
 
 
-	/*add_action( 'after_setup_theme', function () {
+	add_action( 'after_setup_theme', function () {
 		
 		$frontPage = get_page_by_path('home', OBJECT);
 		$blogPage  = get_page_by_path('blog', OBJECT);
 		
-		if ( $frontPage AND $blogPage ){
+		if ( $frontPage ){
 			update_option('show_on_front', 'page');
 			update_option('page_on_front', $frontPage->ID);
-			update_option('page_for_posts', $blogPage->ID);
+//			update_option('page_for_posts', $blogPage->ID);
 		}
-	});*/
+	});
 
 
 
@@ -87,7 +87,7 @@
 
 
 	add_filter( 'admin_footer_text', function() {
-		echo 'Creado por <a href="http://tallerdecodigo.com">TDC</a>. ';
+		echo 'Creado por <a href="http://pixelton.xyz">John Falcon</a>. ';
 		echo 'Powered by <a href="http://www.wordpress.org">WordPress</a>';
 	});
 
@@ -262,3 +262,5 @@
 		}
 		return FALSE;
 	}
+
+	
