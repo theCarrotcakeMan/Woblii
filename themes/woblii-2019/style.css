@@ -3533,6 +3533,14 @@ video {
   clear: both !important;
 }
 
+.font-html{
+  font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+}
+
+.font-sans{
+  font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+}
+
 .font-body{
   font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
 }
@@ -13856,6 +13864,14 @@ video {
     clear: both !important;
   }
 
+  .sm\:font-html{
+    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
+  .sm\:font-sans{
+    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
   .sm\:font-body{
     font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
   }
@@ -24166,6 +24182,14 @@ video {
     content: "" !important;
     display: table !important;
     clear: both !important;
+  }
+
+  .md\:font-html{
+    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
+  .md\:font-sans{
+    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .md\:font-body{
@@ -34480,6 +34504,14 @@ video {
     clear: both !important;
   }
 
+  .lg\:font-html{
+    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
+  .lg\:font-sans{
+    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
   .lg\:font-body{
     font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
   }
@@ -44790,6 +44822,14 @@ video {
     content: "" !important;
     display: table !important;
     clear: both !important;
+  }
+
+  .xl\:font-html{
+    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
+  .xl\:font-sans{
+    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .xl\:font-body{

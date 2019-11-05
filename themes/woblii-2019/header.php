@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://use.typekit.net/vlv7tgy.css">
 		<meta http-equiv="cleartype" content="on">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<?php wp_head(); ?>
 	</head>
@@ -18,24 +19,51 @@
 		<![endif]-->
 		<div class="container mx-auto">
 
-            <header class="mx-auto flex justify-between flex-no-wrap mt-6">
-                <a href="<?php echo site_url(); ?>" class="logo block self-start max-w-12 w-12" title="Woblii">
-                    <img src="<?php echo THEMEPATH."assets/images/woblii-logo.svg"; ?>" class="inline-block contain" alt="">
-                </a>
-                <nav class="flex-4 self-end">
+            <div class="fixed w-full mx-auto block container bg-white">
+                
+                <header class="flex mx-auto mt-6 justify-between flex-no-wrap">
+                    <a href="<?php echo site_url(); ?>" class="logo block self-start max-w-12 w-12" title="Woblii">
+                        <img src="<?php echo THEMEPATH."assets/images/woblii-logo.svg"; ?>" class="inline-block contain" alt="">
+                    </a>
+                    <nav id="desktopMainNavigation" class="flex-4 self-end hidden lg:block">
+                        <ul class="list-none w-auto text-purple-text flex items-end">
+                            <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                                <a href="<?php echo site_url(); ?>">Let's do <br>this together</a>
+                            </li>
+                            <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                                <a href="<?php echo site_url('faq'); ?>">Preguntas <br>Frecuentes</a>
+                            </li>
+                            <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                                <a href="<?php echo site_url('contacto'); ?>">Contacto</a>
+                            </li>
+                            <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                                <a href="<?php echo site_url('aviso-de-privacidad'); ?>">Aviso de <br>Privacidad</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="#" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text focus:text-purple-light" id="mobileMenuTrigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                </header>
+                
+                <nav style="height: 100vh; right: -50vw;" id="mobileMainNavigation" class="flex-4 self-end block lg:hidden fixed w-1/2 top-0 bg-white p-10">
                     <ul class="list-none w-auto text-purple-text flex items-end">
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-middle">
                             <a href="<?php echo site_url(); ?>">Let's do <br>this together</a>
                         </li>
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-middle">
                             <a href="<?php echo site_url('faq'); ?>">Preguntas <br>Frecuentes</a>
                         </li>
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-middle">
                             <a href="<?php echo site_url('contacto'); ?>">Contacto</a>
                         </li>
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-middle">
                             <a href="<?php echo site_url('aviso-de-privacidad'); ?>">Aviso de <br>Privacidad</a>
+                        </li>
+                        <li>
+                            Insert Social networks here
                         </li>
                     </ul>
                 </nav>
-            </header>
+                
+            </div>
