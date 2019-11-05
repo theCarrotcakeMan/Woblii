@@ -24,16 +24,16 @@
                 </a>
                 <nav class="flex-4 self-end">
                     <ul class="list-none w-auto text-purple-text flex items-end">
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-normal align-baseline">
+                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
                             <a href="<?php echo site_url(); ?>">Let's do <br>this together</a>
                         </li>
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-normal align-baseline">
+                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
                             <a href="<?php echo site_url('faq'); ?>">Preguntas <br>Frecuentes</a>
                         </li>
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-normal align-baseline">
+                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
                             <a href="<?php echo site_url('contacto'); ?>">Contacto</a>
                         </li>
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-normal align-baseline">
+                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
                             <a href="<?php echo site_url('aviso-de-privacidad'); ?>">Aviso de <br>Privacidad</a>
                         </li>
                     </ul>
