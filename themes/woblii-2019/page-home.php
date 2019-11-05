@@ -2,15 +2,12 @@
 
 // Redirect user if already logged in
 if(! is_user_logged_in())
-    wp_redirect(site_url('login'));
+    return wp_redirect(site_url('login'));
 
     echo "This is the home page";
 
     $errorMessage = NULL;
-    // Redirect user if already logged in
-    if(is_user_logged_in())
-        wp_redirect(site_url());
-
+   
     // Try to log in
     if(! empty($_POST) AND $_POST['log']){
         try{
@@ -54,5 +51,4 @@ if(! is_user_logged_in())
         </div>
     </div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
