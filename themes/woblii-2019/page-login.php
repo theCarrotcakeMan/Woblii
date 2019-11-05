@@ -36,26 +36,8 @@
             <h2 class="flex-row block text-purple-dark text-3xl font-semibold mr-6">Let's do this together</h2>
         </figure>
         <article class="flex-1">
-            <form class="mt-20 mx-0 w-full max-w-xs bg-white shadow-md border-purple-light rounded px-8 pt-6 pb-8 mb-4" method="post" action="<?php echo site_url('/login'); ?>">
-                <div class="mb-4">
-                    <input class="__inputBase" name="log" id="log" type="text" placeholder="Usuario">
-                </div>
-                <div class="mb-6">
-                    <input class="__inputBase" name="pwd" id="pwd" type="password" placeholder="******************">
-    <!--                <p class="text-red-500 text-xs italic">Please choose a password.</p>-->
-                </div>
-                <div class="flex items-end justify-end">
-                    <button class="bg-purple-dark text-white hover:bg-purple-light hover:text-purple-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                        Iniciar
-                    </button>
-                </div>
-            </form>
-            <a class="block align-baseline font-medium text-sm text-purple-text leading-loose hover:text-purple-dark" title="Regístrate como emprendedor" href="<?php echo site_url('signup'); ?>">
-                ¿Eres emprendedor?
-            </a>
-            <a class="block align-baseline font-medium text-sm text-purple-text leading-loose hover:text-purple-dark" href="#">
-                ¿Olvidó su contraseña?
-            </a>
+            
+            <?php get_template_part( 'partials/general', 'login' ); ?>
             
         </article>
         
