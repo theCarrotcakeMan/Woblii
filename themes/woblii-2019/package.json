@@ -16,8 +16,7 @@
     "url": "https://github.com/MusicForMyself/Woblii"
   },
   "homepage": "https://github.com/MusicForMyself/Woblii#readme",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "postcss-import": "^12.0.1",
     "tailwindcss": "^1.1.3"

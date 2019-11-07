@@ -11,6 +11,18 @@ Version: 1.0
 
 @tailwind base;
 
+h1{
+    @apply block text-purple-dark font-bold text-3xl text-left w-full mb-10;
+}
+h2{
+    @apply block text-purple-dark font-bold text-xl text-left w-full mb-2;
+}
+h3{
+    @apply block text-purple-dark font-semibold text-lg text-left w-full mb-2;
+}
+p{
+    @apply font-thin mb-6;
+}
 .__inputBase{
     @apply shadow appearance-none border rounded w-full py-2 px-3 text-purple-text leading-tight;
 }
@@ -19,22 +31,24 @@ Version: 1.0
     @apply outline-none shadow-outline;
 }
 .customIcons{
+    @apply inline-block;
     background: url('assets/images/iconSprite.svg') no-repeat 0 0;
+    background-size: 600px;
 }
 .customIcons.youtube{
-    width: 80px;
-    height: 80px;
-    background-position: 0px 0px;
+    width: 48px;
+    height: 40px;
+    background-position: -128px -6px;
 }
 .customIcons.facebook{
-    width: 80px;
-    height: 80px;
-    background-position: 0px 0px;
+    width: 40px;
+    height: 40px;
+    background-position: -85px -4px;
 }
 .customIcons.instagram{
-    width: 80px;
-    height: 80px;
-    background-position: 0px 0px;
+    width: 40px;
+    height: 40px;
+    background-position: -45px -4px;
 }
 
 @tailwind components;

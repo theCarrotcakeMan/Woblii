@@ -61,12 +61,12 @@
 	add_action( 'after_setup_theme', function () {
 		
 		$frontPage = get_page_by_path('home', OBJECT);
-		$blogPage  = get_page_by_path('blog', OBJECT);
+		$feedPage  = get_page_by_path('my-feed', OBJECT);
 		
 		if ( $frontPage ){
 			update_option('show_on_front', 'page');
 			update_option('page_on_front', $frontPage->ID);
-//			update_option('page_for_posts', $blogPage->ID);
+			update_option('page_for_posts', $feedPage->ID);
 		}
 	});
 

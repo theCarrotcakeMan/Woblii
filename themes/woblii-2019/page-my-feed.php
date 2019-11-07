@@ -4,23 +4,23 @@
 if(! is_user_logged_in())
     return wp_redirect(site_url('login'));
 
-$errorMessage = NULL;
-
-// Try to log in
-if(! empty($_POST) AND $_POST['log']){
-    try{
-        $user = wp_signon(compact($_POST), TRUE);
-        if ( !is_wp_error( $user ) )
-            wp_redirect(site_url());
-        $errorMessage =  $user->get_error_message();
-    }catch(Exception $exception){
-        echo $exception;
+    $errorMessage = NULL;
+   
+    // Try to log in
+    if(! empty($_POST) AND $_POST['log']){
+        try{
+            $user = wp_signon(compact($_POST), TRUE);
+            if ( !is_wp_error( $user ) )
+                wp_redirect(site_url());
+            $errorMessage =  $user->get_error_message();
+        }catch(Exception $exception){
+            echo $exception;
+        }
     }
-}
 
-get_header();
-
-if($errorMessage): ?>
+    get_header();
+    
+     if($errorMessage): ?>
 
     <div class="mx-auto w-4/5 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
         <span class="block sm:inline"><?php echo $errorMessage; ?></span>
@@ -29,19 +29,19 @@ if($errorMessage): ?>
       </span>
     </div>
     
-    <?php
-endif; ?>
-<section id="articleContainer" class="my-24 mx-auto absolute top-0 pt-10 w-full">
+<?php
+    endif; ?>
+    <section id="articleContainer" class="my-24 mx-auto absolute top-0 pt-10 w-full">
+    
+        <h1 class="block text-purple-dark text-3xl text-left w-full">Let's do this together!</h1>
+    
+        <div id="mainFeed" class="block w-full">
 
-    <h1 class="block text-purple-dark text-3xl text-left w-full">Let's do this together!</h1>
-
-    <div id="mainFeed" class="block w-full">
-        
         <?php
-        if (have_posts()) :
-            while (have_posts()) :
-                the_post(); ?>
-
+            if (have_posts()) :
+                while (have_posts()) :
+                    the_post(); ?>
+                   
                 <article class="w-full max-w-3xl mx-auto bg-purple-light rounded overflow-hidden shadow-lg mb-6">
                     <img class="w-full" src="https://via.placeholder.com/500x320?text=Este+es+un+placeholder" alt="Placeholder image">
                     <div class="px-4 py-2">
@@ -55,13 +55,13 @@ endif; ?>
                     </div>
                 </article>
                 
-                <?php
-            endwhile;
-        endif; ?>
-
-
-    </div>
-
-</section>
+            <?php
+                endwhile;
+            endif; ?>
+            
+            
+        </div>
+        
+    </section>
 
 <?php get_footer(); ?>

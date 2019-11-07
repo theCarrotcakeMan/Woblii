@@ -13,22 +13,22 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body>
+	<body class="font-body font-thin leading-relaxed md:leading-normal">
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
-		<div class="container mx-auto">
+		<div class="container mx-auto relative">
 
-            <div class="fixed w-full mx-auto block container bg-white">
+            <div class="fixed w-full mx-auto block container bg-white z-10">
                 
                 <header class="flex mx-auto mt-6 justify-between flex-no-wrap">
-                    <a href="<?php echo site_url(); ?>" class="logo block self-start max-w-12 w-12" title="Woblii">
+                    <a href="<?php echo site_url('/my-feed'); ?>" class="logo block self-start max-w-12 w-12" title="Woblii | Let's do this together!">
                         <img src="<?php echo THEMEPATH."assets/images/woblii-logo.svg"; ?>" class="inline-block contain" alt="">
                     </a>
-                    <nav id="desktopMainNavigation" class="flex-4 self-end hidden lg:block">
+                    <nav id="desktopMainNavigation" class="flex-4 self-start hidden lg:block ml-3">
                         <ul class="list-none w-auto text-purple-text flex items-end">
                             <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
-                                <a href="<?php echo site_url(); ?>">Let's do <br>this together</a>
+                                <a href="<?php echo site_url('lets-do-this-together'); ?>">Let's do <br>this together</a>
                             </li>
                             <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
                                 <a href="<?php echo site_url('faq'); ?>">Preguntas <br>Frecuentes</a>
@@ -41,11 +41,11 @@
                             </li>
                         </ul>
                     </nav>
-                    <ul id="socialNetworks" class="flex-1">
+                    <ul id="socialNetworks" class="flex-1 self-end float-right text-right">
                         <li>
-                            <a href="#"><i class="customIcons youtube"></i></a>
-                            <a href="#"><i class="customIcons facebook"></i></a>
-                            <a href="#"><i class="customIcons instagram"></i></a>
+                            <a title="Síguenos en TouTube" target="_blank" href="https://youtube.com/"><i class="customIcons youtube"></i></a>
+                            <a title="Síguenos en facebook" target="_blank" href="https://facebook.com/"><i class="customIcons facebook"></i></a>
+                            <a title="Síguenos en Instagram" target="_blank" href="https://instagram.com/"><i class="customIcons instagram"></i></a>
                         </li>
                     </ul>
                     <a href="#" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text focus:text-purple-light" id="mobileMenuTrigger">

@@ -610,6 +610,41 @@ video {
   height: auto;
 }
 
+h1{
+  display: block;
+  color: #6A376B;
+  font-weight: 700;
+  font-size: 1.875rem;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+h2{
+  display: block;
+  color: #6A376B;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+h3{
+  display: block;
+  color: #6A376B;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+p{
+  font-weight: 200;
+  margin-bottom: 1.5rem;
+}
+
 .__inputBase{
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   -webkit-appearance: none;
@@ -632,25 +667,27 @@ video {
 }
 
 .customIcons{
+  display: inline-block;
   background: url('assets/images/iconSprite.svg') no-repeat 0 0;
+  background-size: 600px;
 }
 
 .customIcons.youtube{
-  width: 80px;
-  height: 80px;
-  background-position: 0px 0px;
+  width: 48px;
+  height: 40px;
+  background-position: -128px -6px;
 }
 
 .customIcons.facebook{
-  width: 80px;
-  height: 80px;
-  background-position: 0px 0px;
+  width: 40px;
+  height: 40px;
+  background-position: -85px -4px;
 }
 
 .customIcons.instagram{
-  width: 80px;
-  height: 80px;
-  background-position: 0px 0px;
+  width: 40px;
+  height: 40px;
+  background-position: -45px -4px;
 }
 
 .container{
