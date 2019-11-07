@@ -15,10 +15,10 @@
         </div>
     </form>
     
-    <a class="block align-baseline font-medium text-sm text-purple-text leading-loose hover:text-purple-dark" title="Regístrate como emprendedor" href="<?php echo site_url('signup'); ?>">
+    <a class="block align-baseline font-body font-medium text-sm text-purple-text leading-loose hover:text-purple-dark" title="Regístrate como emprendedor" href="<?php echo site_url('signup'); ?>">
         ¿Eres emprendedor?
     </a>
-    <a class="block align-baseline font-medium text-sm text-purple-text leading-loose hover:text-purple-dark" href="#">
+    <a class="block align-baseline font-body font-medium text-sm text-purple-text leading-loose hover:text-purple-dark" href="#">
         ¿Olvidaste tu contraseña?
     </a>
 

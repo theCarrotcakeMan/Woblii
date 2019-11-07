@@ -41,6 +41,13 @@
                             </li>
                         </ul>
                     </nav>
+                    <ul id="socialNetworks" class="flex-1">
+                        <li>
+                            <a href="#"><i class="customIcons youtube"></i></a>
+                            <a href="#"><i class="customIcons facebook"></i></a>
+                            <a href="#"><i class="customIcons instagram"></i></a>
+                        </li>
+                    </ul>
                     <a href="#" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text focus:text-purple-light" id="mobileMenuTrigger">
                         <i class="material-icons">menu</i>
                     </a>

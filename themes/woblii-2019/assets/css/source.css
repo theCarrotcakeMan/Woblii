@@ -18,6 +18,24 @@ Version: 1.0
 .__inputBase:focus {
     @apply outline-none shadow-outline;
 }
+.customIcons{
+    background: url('assets/images/iconSprite.svg') no-repeat 0 0;
+}
+.customIcons.youtube{
+    width: 80px;
+    height: 80px;
+    background-position: 0px 0px;
+}
+.customIcons.facebook{
+    width: 80px;
+    height: 80px;
+    background-position: 0px 0px;
+}
+.customIcons.instagram{
+    width: 80px;
+    height: 80px;
+    background-position: 0px 0px;
+}
 
 @tailwind components;
 

@@ -43,11 +43,11 @@
         
     </div>
 
-    <div id="welcomeWoblii" style="height: 100vh;">
-        <h1 class="block w-full text-purple-dark text-3xl text-center font-body">¡Bienvenido a Woblii!</h1>
+    <div id="welcome" style="height: 100vh;">
+        <h1 class="block w-full text-purple-dark text-3xl text-center font-body font-bold">¡Bienvenido a Woblii!</h1>
         <div class="flex">
             <div class="flex-1">
-                <p class="text-gray-800 text-left font-body font-light leading-snug text-base w-full">
+                <p class="mt-10 text-gray-800 text-left font-body font-light leading-snug text-base w-full">
                     Somos la primer comunidad para
                     emprendedores con la finalidad de
                     generar proyectos con todos los
@@ -56,7 +56,7 @@
                 </p>
             </div>
             <div class="flex-1 align-middle mx-auto">
-                <img src="<?php echo THEMEPATH."assets/images/message.png"; ?>" alt="">
+                <img class="block object-center" src="<?php echo THEMEPATH."assets/images/message.png"; ?>" alt="">
             </div>
         </div>
     </div>
