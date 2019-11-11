@@ -17,6 +17,9 @@ module.exports = {
       html: ['filson-soft', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
       sans: ['filson-soft', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
       body: ['filson-soft', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif']
+    },
+    lineHeight: {
+      extreme: 4
     }
   },
   variants: {},

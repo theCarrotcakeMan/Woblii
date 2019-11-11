@@ -1,5 +1,6 @@
 <?php
     $errorMessage = NULL;
+    
     get_header();
     
      if($errorMessage): ?>
@@ -11,14 +12,13 @@
       </span>
     </div>
     
-<?php
+    <?php
     endif; ?>
 
-    <section id="articleContainer" class="my-24 absolute w-full max-w-5xl mx-auto top-0 pt-10">
-    
-        <h1 class="block text-purple-dark text-3xl text-center w-full">Contáctanos</h1>
-    
-        <form class="w-full mx-auto">
+    <section id="articleContainer" class="my-24 absolute w-full top-0 pt-10">
+        
+        <form class="w-full max-w-3xl mx-auto mx-auto rounded overflow-hidden shadow-md p-12">
+            <h1 class="block text-purple-dark text-3xl text-center w-full">Contáctanos</h1>
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">

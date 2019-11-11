@@ -2,17 +2,17 @@
     get_header();
     
     the_post(); ?>
-
-    <div id="pageContent" class="my-24 absolute top-0 pt-10">
+    
+    <article id="pageContent" class="my-24 mx-auto absolute top-0 pt-10 w-full" >
         
-        <h1><?php the_title(); ?></h1>
+        <h1 class="block text-purple-dark text-3xl text-left w-full"><?php the_title(); ?></h1>
         
-        <div class="flex flex-no-wrap">
-            <div class="flex-1 w-full">
+        <div class="max-w-3xl mx-auto flex flex-no-wrap">
+            <div class="flex-1 w-full leading-relaxed">
                 <?php the_content(); ?>
             </div>
         </div>
         
-    </div>
+    </article>
 
 <?php get_footer(); ?>
