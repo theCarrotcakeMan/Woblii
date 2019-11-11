@@ -25,7 +25,7 @@ p{
     @apply font-thin mb-6;
 }
 .__inputBase{
-    @apply shadow appearance-none border rounded w-full py-2 px-3 text-purple-text leading-tight;
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-purple-text;
 }
 
 .__inputBase:focus {
