@@ -45,9 +45,9 @@
 
     <div id="welcome" style="height: 100vh;">
         <h1 class="block w-full text-purple-dark text-3xl text-center font-body font-bold">¡Bienvenido a Woblii!</h1>
-        <div class="flex">
-            <div class="flex-1">
-                <p class="mt-10 text-gray-800 text-left font-body font-light leading-snug text-base w-full">
+        <div class="flex content-end">
+            <div class="flex-1 w-full md:w-1/2 text-center">
+                <p class="inline-block mt-10 text-gray-800 text-left font-body font-light leading-relaxed text-xl w-full max-w-sm">
                     Somos la primer comunidad para
                     emprendedores con la finalidad de
                     generar proyectos con todos los
@@ -55,15 +55,15 @@
                     Inversionistas y darle vida a tus ideas.
                 </p>
             </div>
-            <div class="flex-1 align-middle mx-auto">
-                <img class="block object-center" src="<?php echo THEMEPATH."assets/images/message.png"; ?>" alt="">
+            <div class="flex-1 w-full md:w-1/2 align-middle mx-auto">
+                <img class="block object-center mx-auto my-6" src="<?php echo THEMEPATH."assets/images/message.png"; ?>" alt="">
             </div>
         </div>
     </div>
     <div id="whatIsWoblii" style="height: 100vh">
         <div class="flex">
-            <div class="flex-1">
-                <img src="<?php echo THEMEPATH."assets/images/message.png"; ?>" alt="">
+            <div class="flex-1 w-full mx-auto bg-blue-300 shadow-md rounded">
+                <img src="<?php echo THEMEPATH.""; ?>" alt="">
             </div>
         </div>
     </div>
