@@ -19,7 +19,7 @@ h2{
 }
 h3,
 h4{
-    @apply block text-purple-dark font-semibold text-md text-left w-full mb-2;
+    @apply block text-purple-dark font-semibold text-lg text-left w-full mb-2;
 }
 p{
     @apply font-thin mb-6;
