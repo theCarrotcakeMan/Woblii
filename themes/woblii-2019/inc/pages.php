@@ -33,7 +33,7 @@
 			$page = array(
 				'post_author' => 1,
 				'post_status' => 'publish',
-				'post_title'  => '¿Qué es Woblii?',
+				'post_title'  => 'Lets do this together!',
 				'post_name'   => 'lets-do-this-together',
 				'post_type'   => 'page'
 			);

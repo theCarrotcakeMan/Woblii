@@ -137,9 +137,11 @@
 
 	add_action( 'pre_get_posts', function($query){
 
-		if ( $query->is_main_query() and ! is_admin() ) {
-
-		}
+//		if ( is_page('lets-do-this-together') and ! is_admin() ) {
+//		    echo print_r($query);
+//            $query->set( 'post_type', 'woblii-post' );
+//            $query->set( 'posts_per_page', 8 );
+//		}
 		return $query;
 
 	});
