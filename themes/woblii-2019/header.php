@@ -19,10 +19,10 @@
 		<![endif]-->
 		<div class="container mx-auto relative">
 
-            <div class="fixed w-full mx-auto block container bg-white z-10">
+            <div class="fixed top-0 left-0 w-full shadow-md mx-auto block container bg-white z-10">
                 
-                <header class="flex mx-auto mt-6 justify-between flex-no-wrap">
-                    <a href="<?php echo site_url('/my-feed'); ?>" class="logo block self-start max-w-12 w-12" title="Woblii | Let's do this together!">
+                <header class="flex mx-auto mt-0 md:mt-6 justify-between flex-no-wrap">
+                    <a href="<?php echo site_url('/my-feed'); ?>" class="logo block self-start max-w-12 w-12 m-2" title="Woblii | Let's do this together!">
                         <img src="<?php echo THEMEPATH."assets/images/woblii-logo.svg"; ?>" class="inline-block contain" alt="">
                     </a>
                     <nav id="desktopMainNavigation" class="flex-4 self-start hidden lg:block ml-3">
@@ -48,7 +48,7 @@
                             <a title="Síguenos en Instagram" target="_blank" href="https://instagram.com/"><i class="customIcons instagram"></i></a>
                         </li>
                     </ul>
-                    <a href="#" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text focus:text-purple-light" id="mobileMenuTrigger">
+                    <a href="#" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text text-2xl focus:text-purple-light m-2" id="mobileMenuTrigger">
                         <i class="material-icons">menu</i>
                     </a>
                 </header>
