@@ -51,6 +51,10 @@ p{
     height: 40px;
     background-position: -45px -4px;
 }
+.working-icon{
+    width: 300px;
+    height: 300px;
+}
 
 @tailwind components;
 

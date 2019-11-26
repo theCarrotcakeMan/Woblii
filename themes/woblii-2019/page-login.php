@@ -63,7 +63,7 @@
     <div id="whatIsWoblii" style="height: 100vh">
         <div class="flex">
             <div class="flex-1 w-full mx-auto bg-blue-300 shadow-md rounded">
-                <img src="<?php echo THEMEPATH.""; ?>" alt="">
+                <figure class="working-icon" title="¿Qué es Woblii?" alt="¿Qué es Woblii?"></figure>
             </div>
         </div>
     </div>
