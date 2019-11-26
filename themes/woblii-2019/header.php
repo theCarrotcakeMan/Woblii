@@ -19,7 +19,7 @@
 		<![endif]-->
 		<div class="container mx-auto relative">
 
-            <div class="fixed top-0 left-0 w-full shadow-md mx-auto block container bg-white z-10">
+            <div class="fixed top-0 w-full shadow-md mx-auto block container bg-white z-10">
                 
                 <header class="flex mx-auto mt-0 md:mt-6 justify-between flex-no-wrap">
                     <a href="<?php echo site_url('/my-feed'); ?>" class="logo block self-start max-w-12 w-12 m-2" title="Woblii | Let's do this together!">

@@ -32,9 +32,7 @@ $errorMessage = NULL;
     <?php
     endif; ?>
 <section id="articleContainer" class="my-24 mx-auto absolute relative top-0 pt-10 w-full">
-
-    <h1 class="block text-purple-dark text-xl md:text-3xl text-left w-full">Let's do this together!</h1>
-
+    
     <div id="mainFeed" class="block w-full">
     
         <?php
@@ -42,7 +40,7 @@ $errorMessage = NULL;
             while (have_posts()) :
                 the_post();
     
-                get_template_part( 'partials/each', 'post' );
+                get_template_part( 'partials/each-feed', 'post' );
                 
             endwhile;
         endif; ?>

@@ -50,7 +50,18 @@
 			);
 			wp_insert_post( $page, true );
 		}
-        // Sign-up
+		// Sign-up
+		if( ! get_page_by_path('signup-entrepreneur') ){
+			$page = array(
+				'post_author' => 1,
+				'post_status' => 'publish',
+				'post_title'  => 'Regístrate como Entrepreneur en Woblii',
+				'post_name'   => 'signup-entrepreneur',
+				'post_type'   => 'page'
+			);
+			wp_insert_post( $page, true );
+		}
+        // Contacto
 		if( ! get_page_by_path('contacto') ){
 			$page = array(
 				'post_author' => 1,
