@@ -44,19 +44,19 @@
 			$page = array(
 				'post_author' => 1,
 				'post_status' => 'publish',
-				'post_title'  => 'Crea tu cuenta en Woblii',
+				'post_title'  => 'Regístrate como Entrepreneur en Woblii',
 				'post_name'   => 'signup',
 				'post_type'   => 'page'
 			);
 			wp_insert_post( $page, true );
 		}
 		// Sign-up
-		if( ! get_page_by_path('signup-entrepreneur') ){
+		if( ! get_page_by_path('signup-investor') ){
 			$page = array(
 				'post_author' => 1,
 				'post_status' => 'publish',
-				'post_title'  => 'Regístrate como Entrepreneur en Woblii',
-				'post_name'   => 'signup-entrepreneur',
+				'post_title'  => 'Regístrate como Inversionista en Woblii',
+				'post_name'   => 'signup-investor',
 				'post_type'   => 'page'
 			);
 			wp_insert_post( $page, true );

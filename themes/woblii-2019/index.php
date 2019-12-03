@@ -31,7 +31,7 @@ $errorMessage = NULL;
         
     <?php
     endif; ?>
-<section id="articleContainer" class="my-24 mx-auto absolute relative top-0 pt-10 w-full">
+<section id="articleContainer" class="mb-24 mx-auto relative pt-16 w-full">
     
     <div id="mainFeed" class="block w-full">
     

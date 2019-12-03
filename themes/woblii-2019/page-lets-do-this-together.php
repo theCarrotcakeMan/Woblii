@@ -6,9 +6,9 @@
 
     get_header(); ?>
     
-    <section id="articleContainer" class="my-24 mx-auto relative top-0 pt-8 md:pt-10 pl-6 md:pl-0 pr-6 md:pr-0 w-full">
+    <section id="articleContainer" class="mb-24 mx-auto relative pt-20 md:pt-24 pl-6 md:pl-0 pr-6 md:pr-0 w-full">
     
-        <h1 class="block text-purple-dark text-2xl md:text-3xl text-left max-w-3xl mx-auto w-full">Let's do this together!</h1>
+        <h1 class="block text-purple-dark text-2xl md:text-3xl text-center md:text-left max-w-3xl mx-auto w-full">Let's do this together!</h1>
     
         <div id="mainFeed" class="block w-full">
         

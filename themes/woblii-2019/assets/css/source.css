@@ -56,13 +56,45 @@ p{
     height: 300px;
 }
 
+.toggle-input {
+    display: none;
+}
+.toggle-input:not(checked) ~ .toggle-content {
+    left: -100%;
+}
+.toggle-input:not(checked) ~ .toggle-content ~ label.overlay{
+    opacity: 0;
+    display: none;
+}
+.toggle-input:checked ~ .toggle-content {
+    display: block;
+    left: 0;
+}
+.toggle-input:checked ~ .toggle-content ~ label.overlay{
+    opacity: 1;
+    display: block;
+}
+.toggle-content{
+    top: 0;
+    height: 100vh;
+    z-index: 999;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+label.overlay{
+    content: "";
+    display: block;
+    position: fixed;
+    width: 200vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.25);
+    z-index: -1;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
 @tailwind components;
 
 @tailwind utilities;
-
-/*._header{*/
-/*    .logo{*/
-/*        display: block;*/
-/*        width: 300px;*/
-/*    }*/
-/*}*/

@@ -39,38 +39,67 @@
                             <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
                                 <a href="<?php echo site_url('aviso-de-privacidad'); ?>">Aviso de <br>Privacidad</a>
                             </li>
+                            <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                                <a href="<?php echo site_url('signup'); ?>">Regístrate</a>
+                            </li>
                         </ul>
                     </nav>
-                    <ul id="socialNetworks" class="flex-1 self-end float-right text-right">
+                    <ul id="socialNetworks" class="hidden md:inline-block m-2 flex-1 self-end float-right text-right">
                         <li>
                             <a title="Síguenos en TouTube" target="_blank" href="https://youtube.com/"><i class="customIcons youtube"></i></a>
                             <a title="Síguenos en facebook" target="_blank" href="https://facebook.com/"><i class="customIcons facebook"></i></a>
                             <a title="Síguenos en Instagram" target="_blank" href="https://instagram.com/"><i class="customIcons instagram"></i></a>
                         </li>
                     </ul>
-                    <a href="#" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text text-2xl focus:text-purple-light m-2" id="mobileMenuTrigger">
-                        <i class="material-icons">menu</i>
-                    </a>
+                    
+                    <label for="open_menu" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text text-2xl focus:text-purple-light m-2 toggle-label select-none" id="mobileMenuTrigger">
+                        <i class="material-icons pt-4">menu</i>
+                    </label>
+                    <input id="open_menu" name="open_menu" class="toggle-input" type="checkbox" value="selected">
+                    <nav id="mobileMainNavigation" class="overflow-hidden fixed z-40 md:hidden toggle-content left--full bg-white shadow-md w-2/3 p-6 pt-12">
+                        <?php if(! is_user_logged_in()): ?>
+                            <ul class="list-none w-full text-purple-text pd-0 mb-6">
+                                <li class="block leading-loose mb-4 text-base font-body font-light">
+                                    <a class="leading-relaxed" href="<?php echo site_url('signup'); ?>">Regístrate como Entrepreneur</a>
+                                </li>
+                                <li class="block leading-loose mb-4 text-base font-body font-light">
+                                    <a class="leading-relaxed" href="<?php echo site_url('signup-investor'); ?>">Regístrate como Inversionista</a>
+                                </li>
+                            </ul>
+                        <?php endif; ?>
+                        <ul class="list-none w-full text-purple-text pd-0 mb-6">
+                            <li class="block leading-loose mb-4 text-base font-body font-light">
+                                <a class="leading-relaxed" href="<?php echo site_url('lets-do-this-together'); ?>">Let's do this together</a>
+                            </li>
+                            <li class="block leading-loose mb-4 text-base font-body font-light">
+                                <a class="leading-relaxed" href="<?php echo site_url('faq'); ?>">Preguntas Frecuentes</a>
+                            </li>
+                            <li class="block leading-loose mb-4 text-base font-body font-light">
+                                <a class="leading-relaxed" href="<?php echo site_url('contacto'); ?>">Contacto</a>
+                            </li>
+                            <li class="block leading-loose mb-4 text-base font-body font-light">
+                                <a class="leading-relaxed" href="<?php echo site_url('aviso-de-privacidad'); ?>">Aviso de Privacidad</a>
+                            </li>
+                            <?php if( is_user_logged_in()): ?>
+                                <ul class="list-none w-full text-purple-text pd-0">
+                                    <li class="block leading-loose mb-4 text-base font-body font-light">
+                                        <a class="leading-relaxed" href="<?php echo wp_logout_url( site_url() ); ?>">Salir</a>
+                                    </li>
+                                </ul>
+                            <?php endif; ?>
+                            <li class="block mt-6 mb-6 leading-loose text-sm font-hairline">
+                                <ul id="socialNetworks" class="inline-block m-2 self-start float-left">
+                                    <li>
+                                        <a title="Síguenos en TouTube" target="_blank" href="https://youtube.com/"><i class="customIcons youtube"></i></a>
+                                        <a title="Síguenos en facebook" target="_blank" href="https://facebook.com/"><i class="customIcons facebook"></i></a>
+                                        <a title="Síguenos en Instagram" target="_blank" href="https://instagram.com/"><i class="customIcons instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <label for="open_menu" class="overlay -z-10 md:hidden md:invisible"></label>
                 </header>
                 
-                <nav style="height: 100vh; right: -50vw;" id="mobileMainNavigation" class="flex-4 self-end block lg:hidden fixed w-1/2 top-0 bg-white p-10">
-                    <ul class="list-none w-auto text-purple-text flex items-end">
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-middle">
-                            <a href="<?php echo site_url(); ?>">Let's do <br>this together</a>
-                        </li>
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-middle">
-                            <a href="<?php echo site_url('faq'); ?>">Preguntas <br>Frecuentes</a>
-                        </li>
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-middle">
-                            <a href="<?php echo site_url('contacto'); ?>">Contacto</a>
-                        </li>
-                        <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-middle">
-                            <a href="<?php echo site_url('aviso-de-privacidad'); ?>">Aviso de <br>Privacidad</a>
-                        </li>
-                        <li>
-                            Insert Social networks here
-                        </li>
-                    </ul>
-                </nav>
                 
             </div>

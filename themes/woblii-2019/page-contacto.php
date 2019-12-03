@@ -15,10 +15,10 @@
     <?php
     endif; ?>
 
-    <section id="articleContainer" class="my-24 relative w-full top-0 lg:pt-10">
+    <section id="articleContainer" class="mb-24 relative w-full pt-16">
         
         <form class="w-full max-w-3xl mx-auto mx-auto overflow-hidden p-12">
-            <h1 class="block text-purple-dark text-3xl text-center w-full">Contáctanos</h1>
+            <h1 class="block text-purple-dark text-2xl md:text-3xl text-center w-full max-w-3xl">Contáctanos</h1>
             <div class="flex flex-wrap -mx-3 mb-3 md:mb-6">
                 <div class="w-full px-3">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -48,12 +48,12 @@
             
            <div class="flex flex-wrap -mx-3">
                 <div class="w-full px-3 mb-3 mt-3 md:mb-0">
-                    <input type="submit" value="Enviar" class="block m-auto min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    <input type="submit" value="Enviar correo" class="block m-auto min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 </div>
            </div>
             
         </form>
-        <figure class="flex-1 w-full -mt-8 md:w-auto text-center md:text-right">
+        <figure class="flex-1 w-full hidden md:visible -mt-8 md:w-auto text-center md:text-right">
             <img class="inline-block object-none object-contain object-right w-1/2 md:w-2/5 max-w-xs mr-10" src="<?php echo THEMEPATH."assets/images/woblii-logo.svg"; ?>" alt="Woblii">
             <h2 class="flex-row block font-body text-center md:text-right text-purple-dark text-3xl font-semibold mr-10">Let's do this together</h2>
         </figure>

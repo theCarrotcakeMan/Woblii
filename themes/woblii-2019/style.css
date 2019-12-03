@@ -695,6 +695,51 @@ p{
   height: 300px;
 }
 
+.toggle-input {
+  display: none;
+}
+
+.toggle-input:not(checked) ~ .toggle-content {
+  left: -100%;
+}
+
+.toggle-input:not(checked) ~ .toggle-content ~ label.overlay{
+  opacity: 0;
+  display: none;
+}
+
+.toggle-input:checked ~ .toggle-content {
+  display: block;
+  left: 0;
+}
+
+.toggle-input:checked ~ .toggle-content ~ label.overlay{
+  opacity: 1;
+  display: block;
+}
+
+.toggle-content{
+  top: 0;
+  height: 100vh;
+  z-index: 999;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+label.overlay{
+  content: "";
+  display: block;
+  position: fixed;
+  width: 200vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.25);
+  z-index: -1;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
 .container{
   width: 100%;
 }
@@ -9328,6 +9373,13 @@ p{
   left: auto !important;
 }
 
+.-inset-full{
+  top: -100vw !important;
+  right: -100vw !important;
+  bottom: -100vw !important;
+  left: -100vw !important;
+}
+
 .inset-y-0{
   top: 0 !important;
   bottom: 0 !important;
@@ -9346,6 +9398,16 @@ p{
 .inset-x-auto{
   right: auto !important;
   left: auto !important;
+}
+
+.-inset-y-full{
+  top: -100vw !important;
+  bottom: -100vw !important;
+}
+
+.-inset-x-full{
+  right: -100vw !important;
+  left: -100vw !important;
 }
 
 .top-0{
@@ -9378,6 +9440,22 @@ p{
 
 .left-auto{
   left: auto !important;
+}
+
+.-top-full{
+  top: -100vw !important;
+}
+
+.-right-full{
+  right: -100vw !important;
+}
+
+.-bottom-full{
+  bottom: -100vw !important;
+}
+
+.-left-full{
+  left: -100vw !important;
 }
 
 .resize-none{
@@ -11020,18 +11098,6 @@ p{
 .z-auto{
   z-index: auto !important;
 }
-
-/*._header{*/
-
-/*    .logo{*/
-
-/*        display: block;*/
-
-/*        width: 300px;*/
-
-/*    }*/
-
-/*}*/
 
 @media (min-width: 640px){
   .sm\:sr-only{
@@ -19639,6 +19705,13 @@ p{
     left: auto !important;
   }
 
+  .sm\:-inset-full{
+    top: -100vw !important;
+    right: -100vw !important;
+    bottom: -100vw !important;
+    left: -100vw !important;
+  }
+
   .sm\:inset-y-0{
     top: 0 !important;
     bottom: 0 !important;
@@ -19657,6 +19730,16 @@ p{
   .sm\:inset-x-auto{
     right: auto !important;
     left: auto !important;
+  }
+
+  .sm\:-inset-y-full{
+    top: -100vw !important;
+    bottom: -100vw !important;
+  }
+
+  .sm\:-inset-x-full{
+    right: -100vw !important;
+    left: -100vw !important;
   }
 
   .sm\:top-0{
@@ -19689,6 +19772,22 @@ p{
 
   .sm\:left-auto{
     left: auto !important;
+  }
+
+  .sm\:-top-full{
+    top: -100vw !important;
+  }
+
+  .sm\:-right-full{
+    right: -100vw !important;
+  }
+
+  .sm\:-bottom-full{
+    bottom: -100vw !important;
+  }
+
+  .sm\:-left-full{
+    left: -100vw !important;
   }
 
   .sm\:resize-none{
@@ -29939,6 +30038,13 @@ p{
     left: auto !important;
   }
 
+  .md\:-inset-full{
+    top: -100vw !important;
+    right: -100vw !important;
+    bottom: -100vw !important;
+    left: -100vw !important;
+  }
+
   .md\:inset-y-0{
     top: 0 !important;
     bottom: 0 !important;
@@ -29957,6 +30063,16 @@ p{
   .md\:inset-x-auto{
     right: auto !important;
     left: auto !important;
+  }
+
+  .md\:-inset-y-full{
+    top: -100vw !important;
+    bottom: -100vw !important;
+  }
+
+  .md\:-inset-x-full{
+    right: -100vw !important;
+    left: -100vw !important;
   }
 
   .md\:top-0{
@@ -29989,6 +30105,22 @@ p{
 
   .md\:left-auto{
     left: auto !important;
+  }
+
+  .md\:-top-full{
+    top: -100vw !important;
+  }
+
+  .md\:-right-full{
+    right: -100vw !important;
+  }
+
+  .md\:-bottom-full{
+    bottom: -100vw !important;
+  }
+
+  .md\:-left-full{
+    left: -100vw !important;
   }
 
   .md\:resize-none{
@@ -40239,6 +40371,13 @@ p{
     left: auto !important;
   }
 
+  .lg\:-inset-full{
+    top: -100vw !important;
+    right: -100vw !important;
+    bottom: -100vw !important;
+    left: -100vw !important;
+  }
+
   .lg\:inset-y-0{
     top: 0 !important;
     bottom: 0 !important;
@@ -40257,6 +40396,16 @@ p{
   .lg\:inset-x-auto{
     right: auto !important;
     left: auto !important;
+  }
+
+  .lg\:-inset-y-full{
+    top: -100vw !important;
+    bottom: -100vw !important;
+  }
+
+  .lg\:-inset-x-full{
+    right: -100vw !important;
+    left: -100vw !important;
   }
 
   .lg\:top-0{
@@ -40289,6 +40438,22 @@ p{
 
   .lg\:left-auto{
     left: auto !important;
+  }
+
+  .lg\:-top-full{
+    top: -100vw !important;
+  }
+
+  .lg\:-right-full{
+    right: -100vw !important;
+  }
+
+  .lg\:-bottom-full{
+    bottom: -100vw !important;
+  }
+
+  .lg\:-left-full{
+    left: -100vw !important;
   }
 
   .lg\:resize-none{
@@ -50539,6 +50704,13 @@ p{
     left: auto !important;
   }
 
+  .xl\:-inset-full{
+    top: -100vw !important;
+    right: -100vw !important;
+    bottom: -100vw !important;
+    left: -100vw !important;
+  }
+
   .xl\:inset-y-0{
     top: 0 !important;
     bottom: 0 !important;
@@ -50557,6 +50729,16 @@ p{
   .xl\:inset-x-auto{
     right: auto !important;
     left: auto !important;
+  }
+
+  .xl\:-inset-y-full{
+    top: -100vw !important;
+    bottom: -100vw !important;
+  }
+
+  .xl\:-inset-x-full{
+    right: -100vw !important;
+    left: -100vw !important;
   }
 
   .xl\:top-0{
@@ -50589,6 +50771,22 @@ p{
 
   .xl\:left-auto{
     left: auto !important;
+  }
+
+  .xl\:-top-full{
+    top: -100vw !important;
+  }
+
+  .xl\:-right-full{
+    right: -100vw !important;
+  }
+
+  .xl\:-bottom-full{
+    bottom: -100vw !important;
+  }
+
+  .xl\:-left-full{
+    left: -100vw !important;
   }
 
   .xl\:resize-none{

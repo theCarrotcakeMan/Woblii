@@ -1,28 +1,104 @@
-<?php get_header(); ?>
-<!-- Insert content here -->
-    
-    <div class="w-full max-w-xs">
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div class="mb-4">
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+<?php
+
+// Redirect user if already logged in
+if(is_user_logged_in())
+    return wp_redirect(site_url('/'));
+
+get_header(); ?>
+
+<section id="articleContainer" class="max-w-3xl mb-24 mx-auto relative pt-20 md:pt-24 pl-6 md:pl-0 pr-6 md:pr-0 w-full">
+
+    <h1 class="block text-purple-dark text-2xl md:text-3xl text-center md:text-left mx-auto w-full">¡Regístrate como Entrepreneur!</h1>
+
+    <div id="registerEntrepreneur" class="block w-full">
+
+        <form class="w-full max-w-3xl mx-auto mx-auto flex flex-wrap overflow-hidden md:px-12" action="">
+            <div class="w-full mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="name" id="name" type="text" placeholder="Nombre">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
             </div>
-            <div class="mb-6">
-                <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
-                <p class="text-red-500 text-xs italic">Please choose a password.</p>
+            <div class="max-w-1/2 w-1/2 mb-3 pr-2 md:mb-6">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="age" id="age" type="text" placeholder="Edad">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
             </div>
-            <div class="flex items-center justify-between">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                    Sign In
-                </button>
-                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                    Forgot Password?
-                </a>
+            <div class="max-w-1/2 w-1/2 mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <div class="relative">
+                        <select name="gender" id="gender" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                            <option value="">Sexo</option>
+                            <option value="female">Femenino</option>
+                            <option value="male">Masculino</option>
+                            <option value="other">No especificar</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 py-4 px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                    </div>
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
             </div>
+
+            <div class="w-full mb-3 md:mb-6">
+                <label class="md:w-2/3 block text-gray-500 font-bold">
+                    <input class="mr-2 leading-tight" type="checkbox" name="education_degree">
+                    <span class="text-sm text-base font-hairline">Lic. / Dr. / PhD. / Etc. (Se solicitará verificación)</span>
+                </label>
+            </div>
+
+            <div class="w-full mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="name" id="name" type="text" placeholder="Correo electrónico">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+
+            <div class="w-full mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <div class="relative">
+                        <select name="gender" id="gender" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                            <option value="">Selecciona el giro de tu empresa</option>
+                            <option value="1">Educación</option>
+                            <option value="2">Manufactura</option>
+                            <option value="3">Tech</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 py-4 px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                    </div>
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+
+            <div class="w-full mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <textarea name="experience" id="experience" class="__inputBase" placeholder="Explica tu experiencia en el giro que elegiste" cols="30" rows="10"></textarea>
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+
+            <div class="w-full mb-3 md:mb-6">
+                <label class="md:w-2/3 block text-gray-500 font-bold">
+                    <input class="mr-2 leading-tight" type="checkbox" name="has_documentation">
+                    <span class="text-sm text-base font-hairline">Cuento con la documentación que respalda mi proyecto (bocetos, planos, fichas técnicas, etc.)</span>
+                </label>
+            </div>
+
+            <div class="w-full mb-3 md:mb-6">
+                <?php echo do_shortcode("[bws_google_captcha]"); ?>
+            </div>
+
+            <div class="w-full px-3 mb-3 mt-3 md:mb-0">
+                <input type="submit" value="¡Crear cuenta!" class="block m-auto md:ml-0 min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            </div>
+
         </form>
-        <p class="text-center text-gray-500 text-xs">
-            &copy;2019 Acme Corp. All rights reserved.
-        </p>
+
     </div>
 
-<?php get_sidebar(); ?>
+</section>
+
 <?php get_footer(); ?>

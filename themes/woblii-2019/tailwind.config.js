@@ -20,6 +20,11 @@ module.exports = {
     },
     lineHeight: {
       extreme: 4
+    },
+    inset: {
+        '0': 0,
+        auto: 'auto',
+        '-full': '-100vw'
     }
   },
   variants: {},
