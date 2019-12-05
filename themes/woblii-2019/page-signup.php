@@ -3,6 +3,9 @@
 // Redirect user if already logged in
 if(is_user_logged_in())
     return wp_redirect(site_url('/'));
+if(!empty($_POST) && $_POST['signup_submit']){
+
+}
 
 get_header(); ?>
 
@@ -13,9 +16,15 @@ get_header(); ?>
     <div id="registerEntrepreneur" class="block w-full">
 
         <form class="w-full max-w-3xl mx-auto mx-auto flex flex-wrap overflow-hidden md:px-12" action="">
-            <div class="w-full mb-3 md:mb-6">
+            <div class="max-w-1/2 w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
-                    <input class="__inputBase" name="name" id="name" type="text" placeholder="Nombre">
+                    <input class="__inputBase" name="first_name" id="first_name" type="text" placeholder="Nombre">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+            <div class="max-w-1/2 w-1/2 mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="last_name" id="last_name" type="text" placeholder="Apellido(s)">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
@@ -49,9 +58,16 @@ get_header(); ?>
                 </label>
             </div>
 
-            <div class="w-full mb-3 md:mb-6">
+            <div class="max-w-1/2 w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
-                    <input class="__inputBase" name="name" id="name" type="text" placeholder="Correo electrónico">
+                    <input class="__inputBase" name="user_email" id="user_email" type="text" placeholder="Correo electrónico *">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+            
+            <div class="max-w-1/2 w-1/2 mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="user_pass" id="user_pass" type="password" placeholder="Contraseña *">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
@@ -87,6 +103,8 @@ get_header(); ?>
                 </label>
             </div>
 
+            <input type="hidden" name="role" id="role" value="entrepreneur">
+            
             <div class="w-full mb-3 md:mb-6">
                 <?php echo do_shortcode("[bws_google_captcha]"); ?>
             </div>

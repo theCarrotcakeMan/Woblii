@@ -68,6 +68,7 @@
 			update_option('page_on_front', $frontPage->ID);
 			update_option('page_for_posts', $feedPage->ID);
 		}
+		
 	});
 
 
@@ -129,6 +130,9 @@
 
 
 	require_once('inc/pages.php');
+	
+	
+	require_once('inc/users.php');
 	
 	
 // MODIFICAR EL MAIN QUERY ///////////////////////////////////////////////////////////
@@ -264,5 +268,16 @@
 		}
 		return FALSE;
 	}
+
+    /*
+     * Echoes active if the page showing is associated with the parameter
+     * @param  Array $attrs
+     * @param  String $user_role
+     * @return Bool
+     */
+	function register_woblii_user($attrs = [], $user_role = ""){
+        
+        wp_insert_user($attrs);
+    }
 
 	
