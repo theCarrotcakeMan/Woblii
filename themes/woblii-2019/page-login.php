@@ -60,12 +60,7 @@
             </div>
         </div>
     </div>
-    <div id="whatIsWoblii" style="height: 100vh">
-        <div class="flex">
-            <div class="flex-1 w-full mx-auto bg-blue-300 shadow-md rounded">
-                <figure class="working-icon" title="¿Qué es Woblii?" alt="¿Qué es Woblii?"></figure>
-            </div>
-        </div>
-    </div>
+    
+    <home-tabs></home-tabs>
 
 <?php get_footer(); ?>

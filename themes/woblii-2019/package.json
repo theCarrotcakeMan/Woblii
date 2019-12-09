@@ -2,9 +2,13 @@
   "name": "Woblii",
   "version": "1.0.0",
   "description": "Woblii WP custom theme.",
+  "private": true,
+  "main": "js/bundle.js",
   "scripts": {
     "css": "node-sass --output-style compressed --include-path scss assets/css/source.css style.css",
-    "build": "npx tailwind build assets/css/source.css -o style.css"
+    "tail": "npx tailwind build assets/css/source.css -o style.css",
+    "dev": "cross-env NODE_ENV=development webpack",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -16,9 +20,22 @@
     "url": "https://github.com/MusicForMyself/Woblii"
   },
   "homepage": "https://github.com/MusicForMyself/Woblii#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.3.0",
+    "fsevents": "^2.1.2",
+    "vue-loader": "^15.7.2",
+    "vue-resource": "^1.5.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
   "dependencies": {
     "postcss-import": "^12.0.1",
-    "tailwindcss": "^1.1.4"
+    "tailwindcss": "^1.1.4",
+    "vue": "^2.6.10"
+  },
+  "vue":{
+    "runtimeCompiler": true
   }
 }

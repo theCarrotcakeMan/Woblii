@@ -5,7 +5,7 @@
 
 
 
-	define( 'JSPATH', get_template_directory_uri() . '/js/' );
+	define( 'JSPATH', get_template_directory_uri() . '/dist/js/' );
 
 	define( 'CSSPATH', get_template_directory_uri() . '/assets/css/' );
 
@@ -22,12 +22,18 @@
 	add_action( 'wp_enqueue_scripts', function(){
 
 		// scripts
-		wp_enqueue_script( 'plugins', JSPATH.'plugins.js', array('jquery'), '1.0', true );
-		wp_enqueue_script( 'functions', JSPATH.'functions.js', array('plugins'), '1.0', true );
+//		wp_enqueue_script( 'plugins', JSPATH.'plugins.js', array('jquery'), '1.0', true );
+  
+		// Vuejs Dev
+        // wp_enqueue_script( 'vuejs', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js' );
+        // Vuejs Prod
+        // wp_enqueue_script( 'vuejs', 'https://cdn.jsdelivr.net/npm/vue@2.6.0' );
 
-		// localize scripts
-		wp_localize_script( 'functions', 'ajax_url', admin_url('admin-ajax.php') );
-
+        wp_enqueue_script( 'bundle', JSPATH.'bundle.js', [], '1.0', true );
+		
+        // localize scripts
+		wp_localize_script( 'bundle', 'ajax_url', admin_url('admin-ajax.php') );
+  
 		// styles
 		wp_enqueue_style( 'styles', get_stylesheet_uri() );
 
