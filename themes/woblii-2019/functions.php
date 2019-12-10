@@ -29,7 +29,7 @@
         // Vuejs Prod
         // wp_enqueue_script( 'vuejs', 'https://cdn.jsdelivr.net/npm/vue@2.6.0' );
 
-        wp_enqueue_script( 'bundle', JSPATH.'bundle.js', [], '1.0', true );
+//        wp_enqueue_script( 'bundle', JSPATH.'bundle.js', [], '1.0', true );
 		
         // localize scripts
 		wp_localize_script( 'bundle', 'ajax_url', admin_url('admin-ajax.php') );
@@ -283,7 +283,20 @@
      */
 	function register_woblii_user($attrs = [], $user_role = ""){
         
-        wp_insert_user($attrs);
+        $result = wp_insert_user($attrs);
+        return !is_wp_error($result) ? wp_redirect( site_url('?message=Cuenta+creada+exitosamente.+Ahora+puedes+acceder.') ) : wp_redirect( site_url('?error=Error!') );
+    }
+
+	/*
+     * Echoes active if the page showing is associated with the parameter
+     * @param  Array $attrs
+     * @param  String $user_role
+     * @return Bool
+     */
+	function register_woblii_user_json($attrs = [], $user_role = ""){
+        
+        $result = wp_insert_user($attrs);
+        return !is_wp_error($result) ? wp_send_json($result) : wp_send_json_error();
     }
 
 	

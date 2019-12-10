@@ -18,6 +18,9 @@
     <a class="block w-full max-w-xs align-baseline text-center md:text-left font-body font-medium text-sm text-purple-text leading-loose hover:text-purple-dark" title="Regístrate como emprendedor" href="<?php echo site_url('signup'); ?>">
         ¿Eres emprendedor?
     </a>
+    <a class="block w-full max-w-xs align-baseline text-center md:text-left font-body font-medium text-sm text-purple-text leading-loose hover:text-purple-dark" title="Regístrate como emprendedor" href="<?php echo site_url('signup-investor'); ?>">
+        ¿Eres inversionista?
+    </a>
     <a class="block w-full max-w-xs align-baseline text-center md:text-left font-body font-medium text-sm text-purple-text leading-loose hover:text-purple-dark" href="#">
         ¿Olvidaste tu contraseña?
     </a>

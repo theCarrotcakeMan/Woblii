@@ -12,20 +12,26 @@ get_header(); ?>
 
     <div id="registerEntrepreneur" class="block w-full">
 
-        <form class="w-full max-w-4xl mx-auto mx-auto flex flex-wrap overflow-hidden md:p-12" action="">
-            <div class="w-full -mx-3 mb-3 md:mb-6">
+        <form class="w-full max-w-4xl mx-auto mx-auto flex flex-wrap overflow-hidden md:p-12" method="post" action="<?php echo site_url('signup-investor'); ?>">
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
-                    <input class="__inputBase" name="name" id="name" type="text" placeholder="Nombre">
+                    <input class="__inputBase" name="first_name" id="first_name" type="text" placeholder="Nombre">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
-            <div class="max-w-1/2 w-1/2 -mx-3 mb-3 pr-2 md:mb-6">
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="last_name" id="last_name" type="text" placeholder="Apellido(s)">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+            <div class="max-w-1/2 w-1/2 mb-3 pr-2 md:mb-6">
                 <div class="w-full px-3">
                     <input class="__inputBase" name="age" id="age" type="text" placeholder="Edad">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
-            <div class="max-w-1/2 w-1/2 -mx-3 mb-3 md:mb-6">
+            <div class="max-w-1/2 w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
                     <div class="relative">
                         <select name="gender" id="gender" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
@@ -34,7 +40,7 @@ get_header(); ?>
                             <option value="male">Masculino</option>
                             <option value="other">No especificar</option>
                         </select>
-                        <div class="pointer-events-none absolute top-0 right-0 px-2 text-gray-700">
+                        <div class="pointer-events-none absolute inset-y-0 right-0 py-4 px-2 text-gray-700">
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
                     </div>
@@ -42,30 +48,46 @@ get_header(); ?>
                 </div>
             </div>
 
-            <div class="w-full mb-3 md:mb-6">
-                <label class="md:w-2/3 block text-gray-500 font-bold">
-                    <input class="mr-2 leading-tight" type="checkbox" name="education_degree">
-                    <span class="text-sm text-base font-hairline">Lic. / Dr. / PhD. / Etc. (Se solicitará verificación)</span>
-                </label>
-            </div>
-
-            <div class="w-full -mx-3 mb-3 md:mb-6">
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
-                    <input class="__inputBase" name="name" id="name" type="text" placeholder="Correo electrónico">
+                    <input class="__inputBase" name="user_rfc" id="user_rfc" type="text" placeholder="RFC *">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+            
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="user_email" id="user_email" type="text" placeholder="Correo electrónico">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+            
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="user_pass" id="user_pass" type="password" placeholder="Contraseña *">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
 
-            <div class="w-full -mx-3 mb-3 md:mb-6">
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
                     <div class="relative">
                         <select name="gender" id="gender" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                            <option value="">Selecciona el giro de tu empresa</option>
-                            <option value="1">Educación</option>
-                            <option value="2">Manufactura</option>
-                            <option value="3">Tech</option>
+                            <?php
+                            $terms_range = get_terms( [
+                                'taxonomy'      => 'investment-range',
+                                'hide_empty'    => false
+                            ] );
+                            ?>
+                            <option value="">Selecciona el rango de inversión</option>
+                            <?php
+                            foreach ($terms_range as $myTerm): ?>
+                                <option value="<?php echo $myTerm->slug; ?>"><?php echo $myTerm->name; ?></option>
+                            <?php
+                            endforeach;
+                            ?>
                         </select>
-                        <div class="pointer-events-none absolute top-0 right-0 px-2 text-gray-700">
+                        <div class="pointer-events-none absolute inset-y-0 right-0 py-4 px-2 text-gray-700">
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
                     </div>
@@ -73,21 +95,69 @@ get_header(); ?>
                 </div>
             </div>
 
-            <div class="w-full -mx-3 mb-3 md:mb-6">
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
-                    <textarea name="experience" id="experience" class="__inputBase" placeholder="Explica tu experiencia en el giro que elegiste" cols="30" rows="10"></textarea>
+                    <textarea name="experience" id="experience" class="__inputBase" placeholder="Cuéntanos sobre tu experiencia en negocios" cols="30" rows="6"></textarea>
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
 
-            <div class="w-full mb-3 md:mb-6">
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <label class="md:w-2/3 block text-gray-500 font-bold">
-                    <input class="mr-2 leading-tight" type="checkbox" name="has_documentation">
-                    <span class="text-sm text-base font-hairline">Cuento con la documentación que respalda mi proyecto (bocetos, planos, fichas técnicas, etc.)</span>
+                    <input class="mr-2 leading-tight" type="checkbox" name="accept_terms">
+                    <span class="text-sm text-base font-hairline">Acepto compartir mis datos de inversionista con Woblii</span>
                 </label>
             </div>
+            
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-4 md:mb-6">
+                <h3 class="text-xl text-base font-hairline">Información de la empresa</h3>
+            </div>
+            
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="company_name" id="company_name" type="text" placeholder="Nombre de la Empresa">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+        
+            <div class="w-1/2 mb-3 md:mb-6 ml-4">
+                <div class="w-full px-3">
+                    <input class="__inputBase" name="company_year_started" id="company_year_started" type="text" placeholder="Nombre de la Empresa">
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+            
+            <div class="w-1/2 mb-3 md:mb-6 ml-4">
+                <div class="w-full px-3">
+                    <select name="gender" id="gender" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        <?php
+                        $terms_lines = get_terms( [
+                            'taxonomy'      => 'line-of-service',
+                            'hide_empty'    => false
+                        ] );
+                        ?>
+                        <option value="">Selecciona el giro de tu empresa</option>
+                        <?php
+                        foreach ($terms_lines as $myTerm): ?>
+                            <option value="<?php echo $myTerm->slug; ?>"><?php echo $myTerm->name; ?></option>
+                        <?php
+                        endforeach;
+                        ?>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 py-4 px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                </div>
+            </div>
 
-            <div class="w-full -mx-3 mb-3 md:mb-6">
+            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
+                <div class="w-full px-3">
+                    <textarea name="experience" id="experience" class="__inputBase" placeholder="Explica tu experiencia en el campo de tu empresa" cols="30" rows="6"></textarea>
+                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
+                </div>
+            </div>
+
+            <div class="w-full mb-3 md:mb-6 ml-4">
                 <?php echo do_shortcode("[bws_google_captcha]"); ?>
             </div>
 

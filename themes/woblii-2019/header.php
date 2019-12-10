@@ -46,9 +46,9 @@
                     </nav>
                     <ul id="socialNetworks" class="hidden md:inline-block m-2 flex-1 self-end float-right text-right">
                         <li>
-                            <a title="Síguenos en TouTube" target="_blank" href="https://youtube.com/"><i class="customIcons youtube"></i></a>
-                            <a title="Síguenos en facebook" target="_blank" href="https://facebook.com/"><i class="customIcons facebook"></i></a>
-                            <a title="Síguenos en Instagram" target="_blank" href="https://instagram.com/"><i class="customIcons instagram"></i></a>
+                            <a title="Síguenos en TouTube" target="_blank" href="https://www.youtube.com/channel/UCBuNd7DPV5lViMEjY7PgK6A/?guided_help_flow=5&disable_polymer=true"><i class="customIcons youtube"></i></a>
+                            <a title="Síguenos en facebook" target="_blank" href="https://www.facebook.com/Woblii-2245321675514915/"><i class="customIcons facebook"></i></a>
+                            <a title="Síguenos en Instagram" target="_blank" href="https://www.instagram.com/woblii"><i class="customIcons instagram"></i></a>
                         </li>
                     </ul>
                     
@@ -90,9 +90,9 @@
                             <li class="block mt-6 mb-6 leading-loose text-sm font-hairline">
                                 <ul id="socialNetworks" class="inline-block m-2 self-start float-left">
                                     <li>
-                                        <a title="Síguenos en TouTube" target="_blank" href="https://youtube.com/"><i class="customIcons youtube"></i></a>
-                                        <a title="Síguenos en facebook" target="_blank" href="https://facebook.com/"><i class="customIcons facebook"></i></a>
-                                        <a title="Síguenos en Instagram" target="_blank" href="https://instagram.com/"><i class="customIcons instagram"></i></a>
+                                        <a title="Síguenos en TouTube" target="_blank" href="https://www.youtube.com/channel/UCBuNd7DPV5lViMEjY7PgK6A/?guided_help_flow=5&disable_polymer=true"><i class="customIcons youtube"></i></a>
+                                        <a title="Síguenos en facebook" target="_blank" href="https://www.facebook.com/Woblii-2245321675514915/"><i class="customIcons facebook"></i></a>
+                                        <a title="Síguenos en Instagram" target="_blank" href="https://www.instagram.com/woblii"><i class="customIcons instagram"></i></a>
                                     </li>
                                 </ul>
                             </li>
