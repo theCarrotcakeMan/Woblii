@@ -90,7 +90,7 @@
 			$page = array(
 				'post_author' => 1,
 				'post_status' => 'publish',
-				'post_title'  => 'Perfil de usuario',
+				'post_title'  => 'Información de perfil',
 				'post_name'   => 'profile',
 				'post_type'   => 'page'
 			);

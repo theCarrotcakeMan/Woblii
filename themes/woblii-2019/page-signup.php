@@ -9,13 +9,13 @@
 
     get_header(); ?>
 
-<section id="articleContainer" class="max-w-3xl mb-24 mx-auto relative pt-20 md:pt-24 pl-6 md:pl-0 pr-6 md:pr-0 w-full">
+<section id="articleContainer" class="max-w-3xl mb-24 mx-auto relative pt-24 md:pt-32 pl-6 md:pl-0 pr-6 md:pr-0 w-full">
 
     <h1 class="block text-purple-dark text-2xl md:text-3xl text-center md:text-left mx-auto w-full">¡Regístrate como Entrepreneur!</h1>
 
     <div id="registerEntrepreneur" class="block w-full">
 
-        <form class="w-full max-w-3xl mx-auto mx-auto flex flex-wrap overflow-hidden md:px-12" method="post" action="<?php echo site_url('signup-investor'); ?>">
+        <form class="w-full max-w-3xl mx-auto mx-auto flex flex-wrap overflow-hidden md:px-12" method="post" action="<?php echo site_url('signup'); ?>">
             <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
                     <input class="__inputBase" name="first_name" id="first_name" type="text" placeholder="Nombre">
@@ -37,7 +37,7 @@
             <div class="max-w-1/2 w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
                     <div class="relative">
-                        <select name="gender" id="gender" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        <select name="gender" id="gender" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                             <option value="">Sexo</option>
                             <option value="female">Femenino</option>
                             <option value="male">Masculino</option>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="w-full mb-3 md:mb-6 ml-4">
-                <label class="md:w-2/3 block text-gray-500 font-bold">
+                <label class="block text-gray-500 font-bold">
                     <input class="mr-2 leading-tight" type="checkbox" name="education_degree">
                     <span class="text-sm text-base font-hairline">Lic. / Dr. / PhD. / Etc. (Se solicitará verificación)</span>
                 </label>
@@ -75,7 +75,7 @@
             <div class="w-full mb-3 md:mb-6">
                 <div class="w-full px-3">
                     <div class="relative">
-                        <select name="gender" id="gender" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        <select name="line_of_business" id="line_of_business" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                     <?php
                         $terms = get_terms( [
                                     'taxonomy'      => 'line-of-business',
@@ -106,7 +106,7 @@
             </div>
 
             <div class="w-full mb-3 md:mb-6 ml-4">
-                <label class="md:w-2/3 block text-gray-500 font-bold">
+                <label class="block text-gray-500 font-bold">
                     <input class="mr-2 leading-tight" type="checkbox" name="has_documentation">
                     <span class="text-sm text-base font-hairline">Cuento con la documentación que respalda mi proyecto (bocetos, planos, fichas técnicas, etc.)</span>
                 </label>
@@ -120,7 +120,7 @@
             </div>
 
             <div class="w-full px-3 mb-3 mt-3 md:mb-0">
-                <input type="submit" value="¡Crear cuenta!" class="block m-auto md:ml-0 min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <input type="submit" value="¡Crear tu cuenta!" class="block m-auto md:ml-0 min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             </div>
 
         </form>

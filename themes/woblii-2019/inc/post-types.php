@@ -67,7 +67,7 @@
 			'hierarchical'       => false,
 			'menu_position'      => 3,
 			'taxonomies'         => array( 'category' ),
-			'supports'           => array( 'title', 'editor', 'thumbnail' )
+			'supports'           => array( 'title', 'author', 'editor', 'thumbnail' )
 		);
 		register_post_type( 'woblii-post', $args );
 
