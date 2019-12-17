@@ -5088,6 +5088,18 @@ label.overlay{
   min-width: 0 !important;
 }
 
+.min-w-1\/4{
+  min-width: 25% !important;
+}
+
+.min-w-1\/2{
+  min-width: 50% !important;
+}
+
+.min-w-3\/4{
+  min-width: 75% !important;
+}
+
 .min-w-full{
   min-width: 100% !important;
 }
@@ -15418,6 +15430,18 @@ label.overlay{
 
   .sm\:min-w-0{
     min-width: 0 !important;
+  }
+
+  .sm\:min-w-1\/4{
+    min-width: 25% !important;
+  }
+
+  .sm\:min-w-1\/2{
+    min-width: 50% !important;
+  }
+
+  .sm\:min-w-3\/4{
+    min-width: 75% !important;
   }
 
   .sm\:min-w-full{
@@ -25753,6 +25777,18 @@ label.overlay{
     min-width: 0 !important;
   }
 
+  .md\:min-w-1\/4{
+    min-width: 25% !important;
+  }
+
+  .md\:min-w-1\/2{
+    min-width: 50% !important;
+  }
+
+  .md\:min-w-3\/4{
+    min-width: 75% !important;
+  }
+
   .md\:min-w-full{
     min-width: 100% !important;
   }
@@ -36086,6 +36122,18 @@ label.overlay{
     min-width: 0 !important;
   }
 
+  .lg\:min-w-1\/4{
+    min-width: 25% !important;
+  }
+
+  .lg\:min-w-1\/2{
+    min-width: 50% !important;
+  }
+
+  .lg\:min-w-3\/4{
+    min-width: 75% !important;
+  }
+
   .lg\:min-w-full{
     min-width: 100% !important;
   }
@@ -46417,6 +46465,18 @@ label.overlay{
 
   .xl\:min-w-0{
     min-width: 0 !important;
+  }
+
+  .xl\:min-w-1\/4{
+    min-width: 25% !important;
+  }
+
+  .xl\:min-w-1\/2{
+    min-width: 50% !important;
+  }
+
+  .xl\:min-w-3\/4{
+    min-width: 75% !important;
   }
 
   .xl\:min-w-full{

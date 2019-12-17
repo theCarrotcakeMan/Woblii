@@ -35,7 +35,7 @@
             <img class="object-none object-contain object-center md:object-right w-1/2 md:w-2/5 max-w-xs mt-20 md:mt-0 mr-auto ml-auto md:mr-10" src="<?php echo THEMEPATH."assets/images/woblii-logo.svg"; ?>" alt="Woblii">
             <h2 class="flex-row block font-body text-right text-purple-dark text-3xl font-semibold max-w-xs mr-auto ml-auto md:mr-10">Let's do this together</h2>
         </figure>
-        <article class="w-full md:w-auto">
+        <article class="w-full md:w-auto md:min-w-1/2">
             
             <?php get_template_part( 'partials/general', 'login' ); ?>
             

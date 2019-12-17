@@ -18,6 +18,13 @@ module.exports = {
       sans: ['filson-soft', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
       body: ['filson-soft', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif']
     },
+    minWidth: {
+         '0': '0',
+         '1/4': '25%',
+         '1/2': '50%',
+         '3/4': '75%',
+         'full': '100%'
+    },
     lineHeight: {
       extreme: 4
     },

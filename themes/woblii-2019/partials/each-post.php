@@ -8,8 +8,8 @@
             </div>
             <div class="flex items-center w-5/6">
                 <div class="text-sm inline-block align-middle md:-ml-6">
-                    <p class="inline-block text-gray-600 my-0 text-2xl"><?php echo get_the_author(); ?></p>
-                    <p class="inline-block text-gray-600 my-0"><?php echo get_the_date(); ?></p>
+                    <p class="inline-block align-bottom text-gray-600 my-0 text-2xl"><?php echo get_the_author(); ?></p>
+                    <p class="inline-block align-bottom text-gray-600 my-0"><?php echo get_the_date(); ?></p>
                 </div>
             </div>
         </div>
