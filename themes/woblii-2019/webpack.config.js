@@ -7,7 +7,8 @@ module.exports = {
         filename: 'js/bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    mode: "development",
+    mode: "none",
+    watch: true,
     module: {
         rules: [
             {
@@ -19,5 +20,10 @@ module.exports = {
     plugins: [
         // make sure to include the plugin!
         new VueLoaderPlugin()
-    ]
+    ],
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        }
+    }
 };

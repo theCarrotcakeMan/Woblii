@@ -29,7 +29,7 @@
         // Vuejs Prod
         // wp_enqueue_script( 'vuejs', 'https://cdn.jsdelivr.net/npm/vue@2.6.0' );
 
-//        wp_enqueue_script( 'bundle', JSPATH.'bundle.js', [], '1.0', true );
+        wp_enqueue_script( 'bundle', JSPATH.'bundle.js', [], '1.0', true );
 		
         // localize scripts
 		wp_localize_script( 'bundle', 'ajax_url', admin_url('admin-ajax.php') );
@@ -94,7 +94,7 @@
 
 
 	add_filter( 'admin_footer_text', function() {
-		echo 'Creado por <a href="http://pixelton.xyz">John Falcon</a>. ';
+		echo 'Created with love and coffee by <a href="http://pixelton.xyz">John Falcon</a>. ';
 		echo 'Powered by <a href="http://www.wordpress.org">WordPress</a>';
 	});
 
@@ -282,9 +282,42 @@
      * @return Bool
      */
 	function register_woblii_user($attrs = [], $user_role = ""){
-        
+	    
+        $attrs['user_login'] = strtolower(str_replace(' ', '',$attrs['user_firstname'].$attrs['user_lastname']));
+        $attrs['first_name'] = $attrs['user_firstname'];
+        $attrs['last_name'] = $attrs['user_lastname'];
         $result = wp_insert_user($attrs);
-        return !is_wp_error($result) ? wp_redirect( site_url('?message=Cuenta+creada+exitosamente.+Ahora+puedes+acceder.') ) : wp_redirect( site_url('?error=Error!') );
+        if( !is_wp_error($result) )
+            wp_redirect( site_url('login?message=Cuenta+creada+exitosamente.+Ahora+puedes+acceder+a+Woblii.'));
+        exit;
+        wp_redirect( site_url('?error=Error!') );
+        exit;
+    }
+    
+    /*
+     * Process user update
+     */
+    add_action('wp_ajax_nopriv_update_user', 'update_woblii_user');
+    add_action('wp_ajax_update_user', 'update_woblii_user');
+    
+    function update_woblii_user($attrs = [], $user_role = ""){
+        
+        if(!$attrs['ID'])
+            return FALSE;
+        
+        if($attrs['user_age'])
+            update_user_meta($attrs['ID'],'user_age', $attrs['user_age']);
+        if($attrs['user_gender'])
+            update_user_meta($attrs['ID'],'user_gender', $attrs['user_gender']);
+        
+        $result = wp_update_user($attrs);
+    
+        if( $result )
+                wp_send_json_success(NULL, 200);
+            wp_die();
+        
+        wp_send_json_error(NULL, 500);
+        wp_die();
     }
 
 	/*
@@ -298,5 +331,58 @@
         $result = wp_insert_user($attrs);
         return !is_wp_error($result) ? wp_send_json($result) : wp_send_json_error();
     }
+    
+    function fetchUserObject($currentUser)
+    {
+    
+        // $userMeta = get_user_meta($currentUser->ID, NULL, TRUE);
+        
+        $currentUser->data->role = $currentUser->roles[0];
+        $currentUser->data->pretty_role = ucfirst($currentUser->roles[0]);
+        $currentUser->data->first_name  = get_user_meta($currentUser->ID, "first_name", TRUE);
+        $currentUser->data->last_name   = get_user_meta($currentUser->ID, "last_name", TRUE);
+        $currentUser->data->bio         = get_user_meta($currentUser->ID, "description", TRUE);
+        $currentUser->data->nickname    = get_user_meta($currentUser->ID, "nickname", TRUE);
+        
+        // Unset non-secure data
+        unset($currentUser->user_pass, $currentUser->user_status, $currentUser->user_activation_key);
+    
+        return $currentUser->data;
+    }
+    
+    
+    
+    add_action('wp_ajax_nopriv_contact_form', 'contact_form_callback');
+    add_action('wp_ajax_contact_form', 'contact_form_callback');
+    
+    function contact_form_callback() {
+        
+        $client_name = ( isset($_POST['client_name']) ) ? $_POST['client_name'] : NULL;
+        $client_mail = ( isset($_POST['client_mail']) ) ? $_POST['client_mail'] : NULL;
+        $client_message = ( isset($_POST['client_message']) ) ? $_POST['client_message'] : '';
+        if ( $client_mail && $client_name && $client_message ){
+            
+            $mail_to = 'johnleparadox@gmail.com';
+            
+            $subject = 'Contacto Intus.tv';
+            
+            $body_message = 'Nombre: '.$client_name."\n";
+            $body_message .= 'E-mail: '.$client_mail."\n";
+            $body_message .= 'Mensaje: '.$client_message;
+            
+            $headers = 'From: '.$client_mail."\r\n";
+            $headers .= 'Reply-to: '.$client_mail."\r\n";
+            
+            if( wp_mail($mail_to, $subject, $body_message, $headers) )
+                wp_send_json_success(NULL, 200);
+            wp_die();
+        }
+        wp_send_json_error(NULL, 500);
+        wp_die();
+    }
 
-	
+
+function jsonToProp($data)
+    {
+        return json_encode($data, JSON_HEX_QUOT);
+    }

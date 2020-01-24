@@ -7,8 +7,8 @@
   "scripts": {
     "css": "node-sass --output-style compressed --include-path scss assets/css/source.css style.css",
     "tail": "npx tailwind build assets/css/source.css -o style.css",
-    "dev": "cross-env NODE_ENV=development webpack",
-    "build": "cross-env NODE_ENV=production webpack"
+    "dev": "cross-env NODE_ENV=development webpack --mode=development",
+    "build": "cross-env NODE_ENV=production webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -22,20 +22,20 @@
   "homepage": "https://github.com/MusicForMyself/Woblii#readme",
   "devDependencies": {
     "cross-env": "^6.0.3",
-    "css-loader": "^3.3.0",
+    "css-loader": "^3.4.1",
     "fsevents": "^2.1.2",
-    "vue-loader": "^15.7.2",
+    "vue-loader": "^15.8.3",
     "vue-resource": "^1.5.1",
-    "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.41.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "postcss-import": "^12.0.1",
     "tailwindcss": "^1.1.4",
-    "vue": "^2.6.10"
+    "vue": "^2.6.11"
   },
-  "vue":{
+  "vue": {
     "runtimeCompiler": true
   }
 }

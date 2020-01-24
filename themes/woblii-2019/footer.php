@@ -3,9 +3,10 @@
             <small class="block w-full text-center text-xs font-medium text-center">Todos los derechos reservados. Woblii &copy; <?php echo date('Y') ?></small>
         </footer>
         
-		<?php wp_footer(); ?>
-  
 		</div><!-- .container -->
-	</body>
+		
+        <?php wp_footer(); ?>
+	
+    </body>
 
 </html>

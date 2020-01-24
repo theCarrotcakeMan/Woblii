@@ -96,6 +96,42 @@
 			);
 			wp_insert_post( $page, true );
 		}
+  
+		// Complete your Profile page
+		if( ! get_page_by_path('complete-profile') ){
+			$page = array(
+				'post_author' => 1,
+				'post_status' => 'publish',
+				'post_title'  => 'Completa tu información de perfil',
+				'post_name'   => 'complete-profile',
+				'post_type'   => 'page'
+			);
+			wp_insert_post( $page, true );
+		}
+  
+		// Create project page
+		if( ! get_page_by_path('create-project') ){
+			$page = array(
+				'post_author' => 1,
+				'post_status' => 'publish',
+				'post_title'  => 'Nuevo proyecto',
+				'post_name'   => 'create-project',
+				'post_type'   => 'page'
+			);
+			wp_insert_post( $page, true );
+		}
+  
+		// Manage projects page
+		if( ! get_page_by_path('manage-projects') ){
+			$page = array(
+				'post_author' => 1,
+				'post_status' => 'publish',
+				'post_title'  => 'Mis proyectos',
+				'post_name'   => 'manage-projects',
+				'post_type'   => 'page'
+			);
+			wp_insert_post( $page, true );
+		}
 
 
 	});

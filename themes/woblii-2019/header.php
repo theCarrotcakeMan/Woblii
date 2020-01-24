@@ -10,14 +10,17 @@
 		<meta http-equiv="cleartype" content="on">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<?php wp_head(); ?>
+		<?php
+            require __DIR__ . '/vendor/autoload.php';
+        
+            wp_head(); ?>
 	</head>
 
 	<body class="font-body font-thin leading-relaxed md:leading-normal">
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
-		<div id="app" class="container mx-auto relative">
+		<div id="app" class="container mx-auto relative" style="min-height: 100vh;">
 
             <div class="fixed top-0 w-full shadow-md mx-auto block container bg-white z-10">
                 
@@ -42,34 +45,23 @@
                                 </li>
                             </ul>
                         </nav>
+                        <ul id="socialNetworks" class="hidden md:inline-block m-2 flex-1 self-end float-right text-right">
+                            <li>
+                                <a title="Síguenos en TouTube" target="_blank" href="https://www.youtube.com/channel/UCBuNd7DPV5lViMEjY7PgK6A/?guided_help_flow=5&disable_polymer=true"><i class="customIcons youtube"></i></a>
+                                <a title="Síguenos en facebook" target="_blank" href="https://www.facebook.com/Woblii-2245321675514915/"><i class="customIcons facebook"></i></a>
+                                <a title="Síguenos en Instagram" target="_blank" href="https://www.instagram.com/woblii"><i class="customIcons instagram"></i></a>
+                            </li>
+                        </ul>
                     <?php else: ?>
-                        <nav id="desktopMainNavigation" class="flex-4 self-start hidden lg:block mt-2 ml-3">
-                            <ul class="list-none w-auto text-purple-text flex items-end">
-                                <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
-                                    <a href="<?php echo site_url('lets-do-this-together'); ?>">Let's do <br>this together</a>
-                                </li>
-                                <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
-                                    <a href="<?php echo site_url('my-feed'); ?>">Feed</a>
-                                </li>
-                                <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
-                                    <a href="<?php echo site_url('profile'); ?>">Perfil</a>
-                                </li>
-                            </ul>
+                        <nav id="desktopMainNavigation" class="lg:block mt-2 ml-3">
+                            <form class="relative inline-block align-middle" action="<?php echo site_url(); ?>">
+                                <input type="text" class="__inputBase bg-purple-dark" name="s" placeholder="">
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="material-icons text-3xl text-white opacity-50">search</i>
+                                </div>
+                            </form>
                         </nav>
-                        <form class="hidden relative inline-block align-middle" action="<?php echo site_url(); ?>">
-                            <input type="text" class="__inputBase bg-purple-dark" name="s" placeholder="Buscar por tema">
-                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                <i class="customIcons search white"></i>
-                            </div>
-                        </form>
                     <?php endif; ?>
-                    <ul id="socialNetworks" class="hidden md:inline-block m-2 flex-1 self-end float-right text-right">
-                        <li>
-                            <a title="Síguenos en TouTube" target="_blank" href="https://www.youtube.com/channel/UCBuNd7DPV5lViMEjY7PgK6A/?guided_help_flow=5&disable_polymer=true"><i class="customIcons youtube"></i></a>
-                            <a title="Síguenos en facebook" target="_blank" href="https://www.facebook.com/Woblii-2245321675514915/"><i class="customIcons facebook"></i></a>
-                            <a title="Síguenos en Instagram" target="_blank" href="https://www.instagram.com/woblii"><i class="customIcons instagram"></i></a>
-                        </li>
-                    </ul>
                     
                     <label for="open_menu" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text text-2xl focus:text-purple-light m-2 toggle-label select-none" id="mobileMenuTrigger">
                         <i class="material-icons text-4xl pt-2">menu</i>

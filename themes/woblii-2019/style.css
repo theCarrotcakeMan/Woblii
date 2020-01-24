@@ -696,9 +696,48 @@ p{
   background-position: -45px -4px;
 }
 
+.customIcons.feed{
+  width: 40px;
+  height: 40px;
+  background-position: -179px -12px;
+}
+
+.customIcons.feed.white{
+  width: 40px;
+  height: 40px;
+  background-position: -179px -56px;
+}
+
+.customIcons.projects{
+  width: 40px;
+  height: 40px;
+  background-position: -234px -12px;
+}
+
+.customIcons.projects.white{
+  width: 40px;
+  height: 40px;
+  background-position: -232px -56px;
+}
+
 .working-icon{
+  display: inline-block;
+  background: url('assets/images/iconSprite.svg') no-repeat 0 0;
+  background-size: 760px;
   width: 300px;
   height: 300px;
+}
+
+.working-icon.entrepreneur{
+  background-position: -45px -4px;
+}
+
+.working-icon.company{
+  background-position: -45px -4px;
+}
+
+.working-icon.investor{
+  background-position: -45px -4px;
 }
 
 .toggle-input {
@@ -744,6 +783,111 @@ label.overlay{
   z-index: -1;
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
+}
+
+.sk-chase {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-animation: sk-chase 2.5s infinite linear both;
+          animation: sk-chase 2.5s infinite linear both;
+}
+
+.sk-chase-dot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-animation: sk-chase-dot 2.0s infinite ease-in-out both;
+          animation: sk-chase-dot 2.0s infinite ease-in-out both;
+}
+
+.sk-chase-dot:before {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 25%;
+  background-color: #6A376B;
+  border-radius: 100%;
+  -webkit-animation: sk-chase-dot-before 2.0s infinite ease-in-out both;
+          animation: sk-chase-dot-before 2.0s infinite ease-in-out both;
+}
+
+.sk-chase-dot:nth-child(1) { -webkit-animation-delay: -1.1s; animation-delay: -1.1s;
+}
+
+.sk-chase-dot:nth-child(2) { -webkit-animation-delay: -1.0s; animation-delay: -1.0s;
+}
+
+.sk-chase-dot:nth-child(3) { -webkit-animation-delay: -0.9s; animation-delay: -0.9s;
+}
+
+.sk-chase-dot:nth-child(4) { -webkit-animation-delay: -0.8s; animation-delay: -0.8s;
+}
+
+.sk-chase-dot:nth-child(5) { -webkit-animation-delay: -0.7s; animation-delay: -0.7s;
+}
+
+.sk-chase-dot:nth-child(6) { -webkit-animation-delay: -0.6s; animation-delay: -0.6s;
+}
+
+.sk-chase-dot:nth-child(1):before { -webkit-animation-delay: -1.1s; animation-delay: -1.1s;
+}
+
+.sk-chase-dot:nth-child(2):before { -webkit-animation-delay: -1.0s; animation-delay: -1.0s;
+}
+
+.sk-chase-dot:nth-child(3):before { -webkit-animation-delay: -0.9s; animation-delay: -0.9s;
+}
+
+.sk-chase-dot:nth-child(4):before { -webkit-animation-delay: -0.8s; animation-delay: -0.8s;
+}
+
+.sk-chase-dot:nth-child(5):before { -webkit-animation-delay: -0.7s; animation-delay: -0.7s;
+}
+
+.sk-chase-dot:nth-child(6):before { -webkit-animation-delay: -0.6s; animation-delay: -0.6s;
+}
+
+@-webkit-keyframes sk-chase {
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);
+  }
+}
+
+@keyframes sk-chase {
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes sk-chase-dot {
+  80%, 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);
+  }
+}
+
+@keyframes sk-chase-dot {
+  80%, 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes sk-chase-dot-before {
+  50% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  } 100%, 0% {
+    -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+  }
+}
+
+@keyframes sk-chase-dot-before {
+  50% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  } 100%, 0% {
+    -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+  }
 }
 
 .container{
