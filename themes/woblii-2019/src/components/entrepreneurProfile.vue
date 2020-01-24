@@ -58,14 +58,14 @@
 
             <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
-                    <input v-model="internal_user.email" class="__inputBase" name="user_email" id="user_email" type="text" placeholder="Correo electrónico *">
+                    <input v-model="internal_user.user_email" class="__inputBase" name="user_email" id="user_email" type="text" placeholder="Correo electrónico *">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
 
             <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
-                    <input class="__inputBase" name="user_pass" id="user_pass" type="password" placeholder="Contraseña *">
+                    <input v-show="mode!== 'profile'" class="__inputBase" name="user_pass" id="user_pass" type="password" placeholder="Contraseña *">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
@@ -107,7 +107,7 @@
             </div>
 
             <div class="w-full px-3 mb-3 mt-3 md:mb-0">
-                <input :type="mode === 'profile' ? 'button' : 'submit'" @click="submitForm" :value="mode !== 'profile' ? '¡Crea tu cuenta!' : 'Guardar datos'" class="block m-auto md:ml-0 min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <input  v-if="mode != 'profile'" :type="mode === 'profile' ? 'button' : 'submit'" @click="submitForm" :value="mode !== 'profile' ? '¡Crea tu cuenta!' : 'Guardar datos'" class="block m-auto md:ml-0 min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             </div>
 
         </form>

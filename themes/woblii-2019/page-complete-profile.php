@@ -29,7 +29,7 @@
         });
 
     $tpl = $mustache->loadTemplate('full-profile');
-    echo $tpl->render(['blueprint' => jsonToProp($userObject),'lines' => jsonToProp($lines_terms),'user_role' => $userObject->role]);
+    echo $tpl->render(['blueprint' => jsonToProp($userObject),'site_url' => site_url('/'),'lines' => jsonToProp($lines_terms),'user_role' => $userObject->role]);
     
     get_footer();
     
