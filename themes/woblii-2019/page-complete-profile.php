@@ -10,8 +10,8 @@
         wp_redirect(site_url('signup'));
     
     $userObject = fetchUserObject($currentUser);
-//    if(!empty($currentUser) && !empty($userObject->bio))
-//        wp_redirect(site_url('my-feed'));
+    if(!empty($currentUser) && !empty($userObject->bio))
+        wp_redirect(site_url('my-feed'));
 
     get_header();
 
