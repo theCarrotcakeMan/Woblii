@@ -1,0 +1,19 @@
+<section id="feedContainer" class="mb-24 mx-auto relative md:pt-14 pt-32 pl-6 md:pl-0 pr-6 md:pr-0 w-full">
+
+    <div id="mainFeed" class="block w-full max-w-3xl mx-auto">
+
+        <section id="postContainer" class="border border-purple-dark rounded-lg">
+
+            <h2 class="font-hairline text-black text-xl md:text-3xl p-4">Resultados para la búsqueda:</h2>
+
+            {{#posts}}
+
+                {{>each-feed-post }}
+
+            {{/posts}}
+
+        </section>
+
+    </div>
+
+</section>

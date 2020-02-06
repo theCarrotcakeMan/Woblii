@@ -10,8 +10,13 @@
 
     <section id="articleContainer" class="max-w-3xl mb-24 mx-auto relative pt-24 md:pt-32 pl-6 md:pl-0 pr-6 md:pr-0 w-full">
     
-        <h1 class="block text-purple-dark text-2xl md:text-3xl text-center md:text-left mx-auto w-full">Crea un proyecto</h1>
+        <h1 class="block text-purple-dark text-2xl md:text-3xl text-center md:text-left mx-auto w-full">¡Comparte un proyecto!</h1>
         
+        <create-project
+            mode="create"
+            :project="null"
+            >
+        </create-project>
     
     </section>
 

@@ -25,7 +25,7 @@ p{
     @apply font-thin mb-6;
 }
 .__inputBase{
-    @apply shadow appearance-none border rounded w-full py-2 px-3 text-purple-text;
+    @apply shadow appearance-none border border-gray-500 rounded w-full py-2 px-3 text-purple-text;
 }
 
 .__inputBase:focus {
@@ -64,17 +64,37 @@ p{
 .customIcons.feed.white{
     width: 40px;
     height: 40px;
-    background-position: -179px -56px;
+    background-position: -176px -55px;
 }
 .customIcons.projects{
     width: 40px;
     height: 40px;
-    background-position: -234px -12px;
+    background-position: -231px -9px;
 }
 .customIcons.projects.white{
     width: 40px;
     height: 40px;
-    background-position: -232px -56px;
+    background-position: -230px -55px;
+}
+.customIcons.interactions{
+    width: 40px;
+    height: 40px;
+    background-position: -280px -8px;
+}
+.customIcons.interactions.white{
+    width: 40px;
+    height: 40px;
+    background-position: -280px -53px;
+}
+.customIcons.woblii{
+    width: 40px;
+    height: 40px;
+    background-position: -334px -8px;
+}
+.customIcons.woblii.white{
+    width: 40px;
+    height: 40px;
+    background-position: -230px -55px;
 }
 .working-icon{
     @apply inline-block;
@@ -84,13 +104,16 @@ p{
     height: 300px;
 }
 .working-icon.entrepreneur{
-    background-position: -45px -4px;
+    background-position: -25px -214px;
+    background-size: 860px;
 }
 .working-icon.company{
-    background-position: -45px -4px;
+    background-position: -325px -214px;
+    background-size: 860px;
 }
 .working-icon.investor{
-    background-position: -45px -4px;
+    background-position: -588px -214px;
+    background-size: 860px;
 }
 
 .toggle-input {
@@ -185,6 +208,18 @@ label.overlay{
     } 100%, 0% {
           transform: scale(1.0);
       }
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+.slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
 }
 
 @tailwind components;

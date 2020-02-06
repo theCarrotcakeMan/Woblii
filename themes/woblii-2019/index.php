@@ -41,7 +41,12 @@
     if (have_posts()) :
         while (have_posts()) :
             the_post();
-            $myPosts[] = &$post;
+            $myPost = &$post;
+            $myPost->feed_post        = $myPost->post_type === "post" ? TRUE : FALSE;
+            $myPost->author_name      = get_the_author_meta('user_firstname', $myPost->post_author) . " " . get_the_author_meta('user_lastname', $myPost->post_author);
+            $myPost->post_excerpt     = get_the_excerpt();
+            $myPost->thumbnail_tag    = get_the_post_thumbnail($myPost->ID, 'medium',[ "class" => "block w-full h-auto"]);
+            $myPosts[] = $myPost;
         endwhile;
     endif;
 

@@ -36,7 +36,7 @@
                 <div class="w-full px-3">
                     <div class="relative">
                         <select v-model="internal_user.gender" name="user_gender" id="user_gender" placeholder="Sexo" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                            <option value="null">Sexo</option>
+                            <option value="">Sexo</option>
                             <option value="female">Femenino</option>
                             <option value="male">Masculino</option>
                             <option value="other">No especificar</option>
@@ -49,16 +49,16 @@
                 </div>
             </div>
 
-            <div v-if="mode === 'profile'" class="w-full mb-3 md:mb-6 ml-4">
+            <div v-if="mode === 'profile'" class="w-full mb-3 ml-4">
                 <label class="block text-gray-500 font-bold">
-                    <input class="mr-2 leading-tight" type="checkbox" name="education_degree">
+                    <input class="mr-2 leading-tight" type="checkbox" v-model="internal_user.has_degree" value="true" name="education_degree">
                     <span class="text-sm text-base font-hairline">Lic. / Dr. / PhD. / Etc. (Se solicitará verificación)</span>
                 </label>
             </div>
 
             <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
-                    <input v-model="internal_user.user_email" class="__inputBase" name="user_email" id="user_email" type="text" placeholder="Correo electrónico *">
+                    <input v-show="mode!== 'profile'" v-model="internal_user.user_email" class="__inputBase" name="user_email" id="user_email" type="text" placeholder="Correo electrónico *">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
@@ -73,8 +73,9 @@
             <div v-if="mode === 'profile'" class="w-full mb-3 md:mb-6">
                 <div class="w-full px-3">
                     <div class="relative">
-                        <select name="line_of_business" id="line_of_business" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                            <option v-for="line in lines" :value="line.slug">{{line.name}}</option>
+                        <select v-model="internal_user.line_of_business" name="line_of_business" id="line_of_business" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                            <option value="">Línea de negocio</option>
+                            <option v-for="line in lines" :value="line.term_id">{{line.name}}</option>
                         </select>
                         <div class="pointer-events-none absolute inset-y-0 right-0 py-4 px-2 text-gray-700">
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -91,13 +92,6 @@
                 </div>
             </div>
 
-            <div v-if="mode === 'profile'" class="w-full mb-3 md:mb-6 ml-4">
-                <label class="block text-gray-500 font-bold">
-                    <input class="mr-2 leading-tight" type="checkbox" name="has_documentation">
-                    <span class="text-sm text-base font-hairline">Cuento con la documentación que respalda mi proyecto (bocetos, planos, fichas técnicas, etc.)</span>
-                </label>
-            </div>
-
             <input type="hidden" name="ID" id="ID" :value="internal_user.ID">
             <input type="hidden" name="role" id="role" value="entrepreneur">
             <input type="hidden" name="signup_submit" id="signup_submit" value="true">
@@ -106,8 +100,8 @@
                 {{ shortcode }}
             </div>
 
-            <div class="w-full px-3 mb-3 mt-3 md:mb-0">
-                <input  v-if="mode != 'profile'" :type="mode === 'profile' ? 'button' : 'submit'" @click="submitForm" :value="mode !== 'profile' ? '¡Crea tu cuenta!' : 'Guardar datos'" class="block m-auto md:ml-0 min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <div class="w-full px-3 mb-3 mt-3 md:mb-0 flex md:justify-start justify-center">
+                <input :type="mode === 'profile' ? 'button' : 'submit'" @click="submitForm" :value="mode !== 'profile' ? '¡Crea tu cuenta!' : 'Actualizar datos'" class="block md:ml-0 md:mr-auto m-auto min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-light py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             </div>
 
         </form>
@@ -117,8 +111,10 @@
 </template>
 
 <script>
+    // ES6 Modules or TypeScript
+    import Swal from 'sweetalert2';
 
-    module.exports = {
+    export default {
 
         template: "#entrepreneur-profile-template",
 
@@ -152,6 +148,8 @@
                     email: null,
                     age: null,
                     gender: null,
+                    has_degree: null,
+                    line_of_business: null,
                     role: null
                 }
             }
@@ -179,18 +177,26 @@
                 if( this.mode === 'signup' )
                     return;
                 this.loading = true;
-                var passData = {user: this.internal_user, action: 'update_woblii_user'};
-                this.$root.ajaxRequest('post', ajax_url, passData, null, null, null, 'save-user-response');
+                var passData = {user: this.internal_user, action: 'update_user'};
+                console.log(passData);
+                this.$root.ajaxRequest('post', ajax_url, passData, null, null, null, this.showError,'save-user-response');
             },
             ajaxResponseReceived: function (responseData) {
+                console.log("Response received");
                 var vm = this;
                 vm.loading = false;
                 if( responseData.success ){
+                     return window.location.assign('my-feed');
 
-                    console.log("Success!");
-                    return;
                 }
                 console.log("Something happened :(");
+            },
+            showError: function(){
+                Swal.fire(
+                    'Algo sucedió',
+                    'Intenta de nuevo, si el error persiste contacta a Soporte.',
+                    'question'
+                );
             }
         },
 

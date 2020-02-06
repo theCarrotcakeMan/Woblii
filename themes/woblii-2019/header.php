@@ -22,7 +22,7 @@
 		<![endif]-->
 		<div id="app" class="container mx-auto relative" style="min-height: 100vh;">
 
-            <div class="fixed top-0 w-full shadow-md mx-auto block container bg-white z-10">
+            <div class="fixed top-0 w-full max-w-6xl shadow-md mx-auto block container bg-white z-10">
                 
                 <header class="flex mx-auto mt-0 justify-between flex-no-wrap">
                     <a href="<?php echo site_url('/my-feed'); ?>" class="logo block self-start max-w-12 w-12 m-3" title="Woblii | Let's do this together!">
@@ -30,17 +30,17 @@
                     </a>
                     <?php if(! is_user_logged_in()): ?>
                         <nav id="desktopMainNavigation" class="flex-4 self-start hidden lg:block mt-2 ml-3">
-                            <ul class="list-none w-auto text-purple-text flex items-end">
-                                <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                            <ul class="list-none w-auto text-purple-text flex items-center">
+                                <li class=" inline-block hover:text-purple-dark mr-8 leading-snug text-lg font-body font-hairline align-middle">
                                     <a href="<?php echo site_url('lets-do-this-together'); ?>">Let's do <br>this together</a>
                                 </li>
-                                <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                                <li class=" inline-block hover:text-purple-dark mr-8 leading-snug text-lg font-body font-hairline align-middle">
                                     <a href="<?php echo site_url('contacto'); ?>">Contacto</a>
                                 </li>
-                                <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                                <li class=" inline-block hover:text-purple-dark mr-8 leading-snug text-lg font-body font-hairline align-middle">
                                     <a href="<?php echo site_url('aviso-de-privacidad'); ?>">Aviso de <br>Privacidad</a>
                                 </li>
-                                <li class="hover:text-purple-dark mr-8 leading-snug text-lg font-body font-light align-baseline">
+                                <li class=" inline-block hover:text-purple-dark mr-8 leading-snug text-lg font-body font-hairline align-middle">
                                     <a href="<?php echo site_url('signup'); ?>">Regístrate</a>
                                 </li>
                             </ul>
@@ -91,6 +91,7 @@
                                 <li class="block leading-loose mt-6 mb-6 font-body font-hairline text-sm hover:text-purple-text">
                                     <a class="leading-relaxed" href="<?php echo wp_logout_url( site_url() ); ?>">Salir</a>
                                 </li>
+                                <li><hr class="block leading-loose mt-6 mb-6 font-body font-hairline text-sm hover:text-purple-text"></li>
                             </ul>
                         <?php endif; ?>
                         <ul class="list-none w-full text-purple-text pd-0 mb-6">

@@ -1,11 +1,11 @@
-<section id="feedContainer" class="mb-24 mx-auto relative pt-20 md:pt-32 pl-6 md:pl-0 pr-6 md:pr-0 w-full">
+<section id="feedContainer" class="mb-24 mx-auto relative md:pt-14 pt-32 pl-6 md:pl-0 pr-6 md:pr-0 w-full">
     <mini-profile
         :user="{{ userObject }}"
         >
     </mini-profile>
     <div id="mainFeed" class="block w-full max-w-3xl mx-auto">
         <nav id="feedNavigation">
-            <ul class="list-none p-0 m-0">
+            <ul class="list-none p-0 m-0 mt-4">
                 <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
                     <a href="{{ site_url }}/my-feed"><i class="customIcons feed"></i></a>
                 </li>
@@ -13,32 +13,26 @@
                     <a href="{{ site_url }}/manage-projects"><i class="customIcons projects white"></i></a>
                 </li>
                 <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
-                    <i class="customIcons comments"></i>
+                    <a href="{{ site_url }}/interactions"><i class="customIcons interactions"></i></a>
                 </li>
                 <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
                     <i class="customIcons woblii"></i>
-                </li>
-                <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
-                    <i class="customIcons cart"></i>
-                </li>
-                <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
-                    <i class="customIcons tv"></i>
                 </li>
             </ul>
         </nav>
 
         <section id="postContainer" class="border border-purple-dark rounded-lg">
 
-            <h2 class="font-hairline text-black text-3xl pl-2 pt-4 pb-4">Tus proyectos: <i class="material-icons text-purple-dark text-xl">add_circle</i></h2>
+            <h2 class="font-hairline text-black text-xl md:text-3xl p-4">Tus proyectos: <a title="Compartir un proyecto" href="{{ site_url }}/create-project"><i class="material-icons text-purple-dark text-xl">add_circle</i></a></h2>
 
             {{#posts}}
 
-                {{>each-feed-post }}
+                {{>each-project-post }}
 
             {{/posts}}
 
             {{^ posts }}
-                <p class="p-2">No tienes proyectos todavía, <a class="text-blue-600 font-thin" href="">crea tu primer proyecto</a></p>
+                <p class="p-2">No tienes proyectos todavía, <a class="text-blue-600 font-thin" href="{{ site_url }}/create-project">crea tu primer proyecto</a></p>
             {{/ posts }}
 
         </section>

@@ -652,6 +652,7 @@ p{
      -moz-appearance: none;
           appearance: none;
   border-width: 1px;
+  border-color: #a0aec0;
   border-radius: 0.25rem;
   width: 100%;
   padding-top: 0.5rem;
@@ -705,19 +706,43 @@ p{
 .customIcons.feed.white{
   width: 40px;
   height: 40px;
-  background-position: -179px -56px;
+  background-position: -176px -55px;
 }
 
 .customIcons.projects{
   width: 40px;
   height: 40px;
-  background-position: -234px -12px;
+  background-position: -231px -9px;
 }
 
 .customIcons.projects.white{
   width: 40px;
   height: 40px;
-  background-position: -232px -56px;
+  background-position: -230px -55px;
+}
+
+.customIcons.interactions{
+  width: 40px;
+  height: 40px;
+  background-position: -280px -8px;
+}
+
+.customIcons.interactions.white{
+  width: 40px;
+  height: 40px;
+  background-position: -280px -53px;
+}
+
+.customIcons.woblii{
+  width: 40px;
+  height: 40px;
+  background-position: -334px -8px;
+}
+
+.customIcons.woblii.white{
+  width: 40px;
+  height: 40px;
+  background-position: -230px -55px;
 }
 
 .working-icon{
@@ -729,15 +754,18 @@ p{
 }
 
 .working-icon.entrepreneur{
-  background-position: -45px -4px;
+  background-position: -25px -214px;
+  background-size: 860px;
 }
 
 .working-icon.company{
-  background-position: -45px -4px;
+  background-position: -325px -214px;
+  background-size: 860px;
 }
 
 .working-icon.investor{
-  background-position: -45px -4px;
+  background-position: -588px -214px;
+  background-size: 860px;
 }
 
 .toggle-input {
@@ -888,6 +916,23 @@ label.overlay{
     -webkit-transform: scale(1.0);
             transform: scale(1.0);
   }
+}
+
+.slide-fade-enter-active {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+  -webkit-transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  opacity: 0;
 }
 
 .container{
@@ -3793,14 +3838,18 @@ label.overlay{
 }
 
 .font-html{
-  font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+  font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
 }
 
 .font-sans{
-  font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+  font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
 }
 
 .font-body{
+  font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
+}
+
+.font-soft{
   font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
 }
 
@@ -14137,14 +14186,18 @@ label.overlay{
   }
 
   .sm\:font-html{
-    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .sm\:font-sans{
-    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .sm\:font-body{
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
+  .sm\:font-soft{
     font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
@@ -24482,14 +24535,18 @@ label.overlay{
   }
 
   .md\:font-html{
-    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .md\:font-sans{
-    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .md\:font-body{
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
+  .md\:font-soft{
     font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
@@ -34827,14 +34884,18 @@ label.overlay{
   }
 
   .lg\:font-html{
-    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .lg\:font-sans{
-    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .lg\:font-body{
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
+  .lg\:font-soft{
     font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
@@ -45172,14 +45233,18 @@ label.overlay{
   }
 
   .xl\:font-html{
-    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .xl\:font-sans{
-    font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 
   .xl\:font-body{
+    font-family: filson-pro, Open Sans, Helvetica, Arial, sans-serif !important;
+  }
+
+  .xl\:font-soft{
     font-family: filson-soft, Open Sans, Helvetica, Arial, sans-serif !important;
   }
 

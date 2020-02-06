@@ -41,20 +41,20 @@
     
     $myPosts = [];
     
-    $myQuery = new WP_Query( array( 'author' => $userObject->ID, 'post_type' => 'project' ) );
-
-    if ($myQuery->have_posts()) :
-        while ($myQuery->have_posts()) :
-            $myQuery->the_post();
-            $myPost = &$post;
-            $myPost->author_name      = get_the_author_meta('user_firstname', $myPost->post_author) . " " . get_the_author_meta('user_lastname', $myPost->post_author);
-            $myPost->post_excerpt     = get_the_excerpt();
-            $myPost->thumbnail_tag    = get_the_post_thumbnail($myPost->ID, 'medium',[ "class" => "block w-full h-auto"]);
-            $myPosts[] = $myPost;
-        endwhile;
-    endif;
-    
-    $tpl = $mustache->loadTemplate('project-feed');
+//    $myQuery = new WP_Query( array( 'author' => $userObject->ID, 'post_type' => 'project' ) );
+//
+//    if ($myQuery->have_posts()) :
+//        while ($myQuery->have_posts()) :
+//            $myQuery->the_post();
+//            $myPost = &$post;
+//            $myPost->author_name      = get_the_author_meta('user_firstname', $myPost->post_author) . " " . get_the_author_meta('user_lastname', $myPost->post_author);
+//            $myPost->post_excerpt     = get_the_excerpt();
+//            $myPost->thumbnail_tag    = get_the_post_thumbnail($myPost->ID, 'medium',[ "class" => "block w-full h-auto"]);
+//            $myPosts[] = $myPost;
+//        endwhile;
+//    endif;
+//
+    $tpl = $mustache->loadTemplate('interaction-feed');
     echo $tpl->render(['posts' => $myPosts, 'userObject' => jsonToProp($userObject)]);
     
     get_footer();

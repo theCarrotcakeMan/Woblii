@@ -10,10 +10,15 @@ import Vue from 'vue';
 import homeTabs from './components/homeTabs.vue';
 import investorProfile from './components/investorProfile.vue';
 import entrepreneurProfile from './components/entrepreneurProfile.vue';
+import createProject from './components/createProject.vue';
 import miniProfile from './components/miniProfile.vue';
+import errorMessage from './components/errorMessage.vue';
 
-var VueResource = require('vue-resource');
+import VueResource from 'vue-resource';
 Vue.use(VueResource);
+Vue.http.options.emulateJSON = true;
+const http=Vue.http;
+export default http;
 
 /* Global Event handler for Vue */
 window._Event = new Vue();
@@ -21,13 +26,24 @@ window._Event = new Vue();
 Vue.component('home-tabs', homeTabs);
 Vue.component('profile-investor', investorProfile);
 Vue.component('profile-entrepreneur', entrepreneurProfile);
+Vue.component('create-project', createProject);
 Vue.component('mini-profile', miniProfile);
+Vue.component('error-message', errorMessage);
 
+/* Global vm */
 var vm = new Vue({
+
     el: '#app',
+
     data: {
-            message: 'You loaded this page on ' + new Date().toLocaleString()
+            message: 'You loaded this page on ' + new Date().toLocaleString(),
+            my_headers : {
+                'Content-Type': 'application/json'
+            },
+            // base_api_url: window.base_api_url,
+            // base_url: window.base_url
     },
+
     methods: {
 
         ajaxRequest: function( method, endpoint, data, contentType, includeHeaders, successCallback, errorCallback, eventName, cachedRequest ){
@@ -53,7 +69,7 @@ var vm = new Vue({
 
             if( ['post', 'put', 'patch'].includes(method) ){
 
-                return this.$http[method]( this.base_api_url + endpoint, options.body, options )
+                return this.$http[method]( endpoint, options.body, options )
                     .then(response => {
 
                         if(typeof successCallback === 'function')
@@ -68,7 +84,7 @@ var vm = new Vue({
                         console.log("Caught", e);
                     })
             }
-            return this.$http[method]( this.base_api_url + endpoint, options )
+            return this.$http[method]( endpoint, options )
                 .then(response => {
 
                     if(typeof successCallback === 'function')

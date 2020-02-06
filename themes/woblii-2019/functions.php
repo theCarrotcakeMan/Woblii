@@ -142,10 +142,18 @@
 	
 	
 // MODIFICAR EL MAIN QUERY ///////////////////////////////////////////////////////////
+    
+    function include_all_posttypes($query) {
+        if ( $query->is_home() && $query->is_main_query() ) {
+            $query->set( 'post_type', ["post","project"] );
+            $query->set( 'posts_per_page', 12 );
+            $query->set( 'orderby', 'modified' );
+        }
+    }
+    add_action( 'pre_get_posts', 'include_all_posttypes' );
 
 
-
-	add_action( 'pre_get_posts', function($query){
+add_action( 'pre_get_posts', function($query){
 
 //		if ( is_page('lets-do-this-together') and ! is_admin() ) {
 //		    echo print_r($query);
@@ -302,21 +310,72 @@
     
     function update_woblii_user($attrs = [], $user_role = ""){
         
-        if(!$attrs['ID'])
+        extract($_POST);
+        
+        if( empty($user) )
             return FALSE;
-        
-        if($attrs['user_age'])
-            update_user_meta($attrs['ID'],'user_age', $attrs['user_age']);
-        if($attrs['user_gender'])
-            update_user_meta($attrs['ID'],'user_gender', $attrs['user_gender']);
-        
-        $result = wp_update_user($attrs);
     
-        if( $result )
-                wp_send_json_success(NULL, 200);
+        $user['user_login'] = strtolower(str_replace(' ', '',$user['first_name'].$user['last_name']));
+       
+        if( empty($user['ID']) ){
+            $result = wp_insert_user($user);
+        }else{
+            $result = wp_update_user($user);
+        }
+      
+        if(!empty($user['age']))
+            update_user_meta($user['ID'],'age', $user['age']);
+        if(!empty($user['gender']))
+            update_user_meta($user['ID'],'gender', $user['gender']);
+        if(!empty($user['line_of_business']))
+            update_user_meta($user['ID'],'line_of_business', $user['line_of_business']);
+        if(!empty($user['has_degree']))
+            update_user_meta($user['ID'],'has_degree', $user['has_degree']);
+        if(!empty($user['investment_range']))
+            update_user_meta($user['ID'],'investment_range', $user['investment_range']);
+        if(!empty($user['role']))
+            update_user_meta($user['ID'],'role', $user['role']);
+        if(!empty($user['user_rfc']))
+            update_user_meta($user['ID'],'user_rfc', $user['user_rfc']);
+       
+    
+        if( intval($result) )
+                wp_send_json_success(["message" => "Success"], 200);
             wp_die();
         
-        wp_send_json_error(NULL, 500);
+        wp_send_json_error(["message" => "Algo sucedió"], 500);
+        wp_die();
+    }
+    
+    /*
+     * Insert new project
+     */
+    add_action('wp_ajax_nopriv_create_project', 'update_woblii_project');
+    add_action('wp_ajax_create_project', 'update_woblii_project');
+    
+    function update_woblii_project($attrs = [], $user_role = ""){
+        extract($_POST);
+        if(!$project)
+            return FALSE;
+        $project = (object) $project;
+        $new_post = [];
+        $new_post['post_content'] = $project->description;
+        $new_post['post_title'] = $project->name;
+        $new_post['post_status'] = 'publish';
+        $new_post['post_type'] = 'project';
+        $new_post['meta_input'] = [
+            "seed_money"                => $project->seed_money,
+            "participation_percentage"  => $project->participation_percentage,
+            "five_year_projection"      => $project->five_year_projection,
+        ];
+        
+        $result = wp_insert_post($new_post);
+    
+        if( intval($result) )
+                wp_send_json_success(["message" => "Success"], 200);
+            wp_die();
+        
+        wp_send_json_error(["message" => "Project not saved, contact tech support"], 500);
         wp_die();
     }
 
@@ -341,8 +400,14 @@
         $currentUser->data->pretty_role = ucfirst($currentUser->roles[0]);
         $currentUser->data->first_name  = get_user_meta($currentUser->ID, "first_name", TRUE);
         $currentUser->data->last_name   = get_user_meta($currentUser->ID, "last_name", TRUE);
+        $currentUser->data->age         = get_user_meta($currentUser->ID, "age", TRUE);
         $currentUser->data->bio         = get_user_meta($currentUser->ID, "description", TRUE);
         $currentUser->data->nickname    = get_user_meta($currentUser->ID, "nickname", TRUE);
+        $currentUser->data->line_of_business    = get_user_meta($currentUser->ID, "line_of_business", TRUE);
+        $line_term = get_term( $currentUser->data->line_of_business, 'line-of-business');
+        $currentUser->data->line_of_business_pretty    = $line_term->name;
+        $currentUser->data->gender    = get_user_meta($currentUser->ID, "gender", TRUE);
+        $currentUser->data->has_degree  = get_user_meta($currentUser->ID, "has_degree", TRUE);
         
         // Unset non-secure data
         unset($currentUser->user_pass, $currentUser->user_status, $currentUser->user_activation_key);

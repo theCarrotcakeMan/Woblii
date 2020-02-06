@@ -6,14 +6,14 @@
     <div id="mainFeed" class="block w-full max-w-3xl mx-auto">
         <nav id="feedNavigation">
             <ul class="list-none p-0 m-0 mt-4">
+                <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
+                    <a href="{{ site_url }}/my-feed" title="Novedades en tu Universo"><i class="customIcons feed"></i></a>
+                </li>
+                <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
+                    <a href="{{ site_url }}/manage-projects" title="Mis proyectos"><i class="customIcons projects"></i></a>
+                </li>
                 <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark bg-purple-dark">
-                    <a href="{{ site_url }}/my-feed"><i class="customIcons feed white"></i></a>
-                </li>
-                <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
-                    <a href="{{ site_url }}/manage-projects"><i class="customIcons projects"></i></a>
-                </li>
-                <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
-                    <a href="{{ site_url }}/interactions"><i class="customIcons interactions"></i></a>
+                    <a href="{{ site_url }}/interactions" title="Mis interacciones"><i class="customIcons interactions white"></i></a>
                 </li>
                 <li class="inline-block align-baseline w-12 h-12 rounded-lg border border-purple-dark">
                     <i class="customIcons woblii"></i>
@@ -23,18 +23,17 @@
 
         <section id="postContainer" class="border border-purple-dark rounded-lg">
 
-            <h2 class="font-hairline text-black text-xl md:text-3xl p-4">Novedades en tu universo:</h2>
+            <h2 class="font-hairline text-black text-xl md:text-3xl p-4">Tus interacciones</h2>
 
             {{#posts}}
 
-                {{# feed_post }}
-                    {{>each-feed-post }}
-                {{/ feed_post }}
-                {{^ feed_post }}
-                    {{>each-project-post }}
-                {{/ feed_post }}
+                {{>each-project-post }}
 
             {{/posts}}
+
+            {{^ posts }}
+                <p class="py-2 px-4">No tienes interacciones todavía, <a class="text-blue-600 font-thin" href="{{ site_url }}/my-feed">explora lo que hay de nuevo</a> en tu Universo.</p>
+            {{/ posts }}
 
         </section>
 
