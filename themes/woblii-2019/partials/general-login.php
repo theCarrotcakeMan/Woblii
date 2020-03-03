@@ -1,6 +1,6 @@
 <div class="relative mx-auto md:mx-0 md:ml-10 mb-4 w-full" id="loginFormContainer">
-    
-    <form class="w-full max-w-xs mx-auto mt-12 mb-8 md:my-12 bg-white shadow-md border-purple-light rounded px-8 pt-6 pb-8" method="post" action="<?php echo site_url('/login'); ?>">
+
+    <form class="w-full max-w-xs mx-auto mt-12 md:my-12 mb-4 px-8 pt-6 pb-8 bg-white shadow-md border-purple-light rounded" method="post" action="<?php echo site_url('/login'); ?>">
         <div class="mb-4">
             <input class="__inputBase border-purple-dark" name="log" id="log" type="text" placeholder="Usuario">
         </div>
@@ -14,12 +14,9 @@
             </button>
         </div>
     </form>
-    
+
     <a class="block w-full max-w-xs mx-auto align-baseline text-center md:text-left font-body font-medium text-sm text-purple-text leading-loose mb-2 hover:text-blue-600 hover:underline" title="Regístrate como emprendedor" href="<?php echo site_url('signup'); ?>">
         ¿Eres emprendedor?
-    </a>
-    <a class="block w-full max-w-xs mx-auto align-baseline text-center md:text-left font-body font-medium text-sm text-purple-text leading-loose mb-2 hover:text-blue-600 hover:underline" title="Regístrate como emprendedor" href="<?php echo site_url('signup-investor'); ?>">
-        ¿Eres inversionista?
     </a>
     <a class="block w-full max-w-xs mx-auto align-baseline text-center md:text-left font-body font-medium text-sm text-blue-600 leading-loose hover:text-blue-600 hover:underline" href="#">
         ¿Olvidaste tu contraseña?

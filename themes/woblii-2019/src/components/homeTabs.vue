@@ -1,6 +1,8 @@
 <template id="home-tabs-template">
 
-    <div id="whatIsWoblii" class="w-full max-w-5xl mx-auto mt-16 mb-12 md:mb-0 p-4 md:p-0" style="min-height: 100vh">
+    <div id="whatIsWoblii" data-section-name="Registrate" class="snapable-window relative w-full max-w-5xl mx-auto mt-16 mb-12 md:mb-0 p-4 md:p-0">
+
+		<section class="absolute center-vertically w-full">
 
             <h3 class="font-light p-4 md:p-8 text-lg md:text-2xl">Elige el perfil que se apegue a tus necesidades</h3>
 
@@ -62,7 +64,7 @@
 <!--                </div>-->
             </div>
             <div class="clearfix"></div>
-        </div>
+		</section>
     </div>
 
 </template>

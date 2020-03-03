@@ -5,7 +5,7 @@
         <a class="absolute top-0 right-0" v-show="editBioVisible" @click="editBio"><i class="customIcons editable"></i></a>
         <div class="flex-wrap md:flex-no-wrap border border-purple-dark rounded-lg">
             <figure style="max-width: 8rem; max-height: 8rem;" class="inline-block flex-column md:flex-none m-auto md:m-0 align-middle md:align-top w-1/3 h-auto p-4" @mouseover="editAvatarVisible = true" @mouseleave="editAvatarVisible = false">
-                <img src="https://via.placeholder.com/90x90" class="w-full h-auto rounded-bl-sm" :alt="user.first_name + user.last_name">
+                <img src="https://via.placeholder.com/90x90" class="w-full h-auto rounded-bl-sm rounded-lg border border-purple-text" :alt="user.first_name + user.last_name">
             </figure>
             <div class="inline-block align-top w-full md:w-2/3 p-4">
                 <p class="text-base text-purple-dark font-hairline mb-0" v-if="user.bio" @mouseover="editBioVisible = true" v-html="!readMoreActivated ? truncate(user.bio,  180 ) : truncate(user.bio)"></p>

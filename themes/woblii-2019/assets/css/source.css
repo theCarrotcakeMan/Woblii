@@ -222,6 +222,12 @@ label.overlay{
     opacity: 0;
 }
 
+.center-vertically{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
 @tailwind components;
 
 @tailwind utilities;

@@ -38,7 +38,7 @@
 			'supports'           => array( 'title', 'editor', 'thumbnail' )
 		);
 		register_post_type( 'project', $args );
-  
+
 		// Let's do this together
 		$labels = array(
 			'name'          => 'Woblii Content',
@@ -70,5 +70,37 @@
 			'supports'           => array( 'title', 'author', 'editor', 'thumbnail' )
 		);
 		register_post_type( 'woblii-post', $args );
+
+		// FAQ
+		$labels = array(
+			'name'          => 'FAQ',
+			'singular_name' => 'FAQ',
+			'add_new'       => 'New Question',
+			'add_new_item'  => 'New Question',
+			'edit_item'     => 'Edit Question',
+			'new_item'      => 'New Question',
+			'all_items'     => 'All',
+			'view_item'     => 'View FAQ',
+			'search_items'  => 'Search FAQ',
+			'not_found'     => 'Question not found',
+			'menu_name'     => 'FAQ'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'faq' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 3,
+			'taxonomies'         => array( 'category' ),
+			'supports'           => array( 'title', 'author', 'editor', 'thumbnail' )
+		);
+		register_post_type( 'faq', $args );
 
 	});

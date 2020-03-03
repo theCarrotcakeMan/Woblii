@@ -11,8 +11,9 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<?php
+			// Initialize composer installed dependencies
             require __DIR__ . '/vendor/autoload.php';
-        
+
             wp_head(); ?>
 	</head>
 
@@ -20,12 +21,12 @@
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
-		<div id="app" class="container mx-auto relative" style="min-height: 100vh;">
+		<div id="app" class="relative" style="min-height: 100vh;">
 
-            <div class="fixed top-0 w-full max-w-6xl shadow-md mx-auto block container bg-white z-10">
-                
-                <header class="flex mx-auto mt-0 justify-between flex-no-wrap">
-                    <a href="<?php echo site_url('/my-feed'); ?>" class="logo block self-start max-w-12 w-12 m-3" title="Woblii | Let's do this together!">
+            <div class="fixed top-0 w-screen shadow-md mx-auto block bg-white z-10">
+
+                <header class="flex mx-auto mt-0 flex-no-wrap items-start">
+                    <a href="<?php echo site_url('/my-feed'); ?>" class="logo block self-start max-w-12 w-12 m-3 ml-6" title="Woblii | Let's do this together!">
                         <img src="<?php echo THEMEPATH."assets/images/woblii-logo.svg"; ?>" class="inline-block contain" alt="">
                     </a>
                     <?php if(! is_user_logged_in()): ?>
@@ -53,7 +54,7 @@
                             </li>
                         </ul>
                     <?php else: ?>
-                        <nav id="desktopMainNavigation" class="lg:block mt-2 ml-3">
+                        <nav id="desktopMainNavigation" class="lg:block mt-3 ml-3">
                             <form class="relative inline-block align-middle" action="<?php echo site_url(); ?>">
                                 <input type="text" class="__inputBase bg-purple-dark" name="s" placeholder="">
                                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -62,7 +63,7 @@
                             </form>
                         </nav>
                     <?php endif; ?>
-                    
+
                     <label for="open_menu" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text text-2xl focus:text-purple-light m-2 toggle-label select-none" id="mobileMenuTrigger">
                         <i class="material-icons text-4xl pt-2">menu</i>
                     </label>
@@ -118,5 +119,5 @@
                     </nav>
                     <label for="open_menu" class="overlay -z-10 md:hidden md:invisible"></label>
                 </header>
-                
+
             </div>
