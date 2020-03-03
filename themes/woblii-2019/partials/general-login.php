@@ -2,7 +2,7 @@
 
     <form class="w-full max-w-xs mx-auto mt-12 md:my-12 mb-4 px-8 pt-6 pb-8 bg-white shadow-md border-purple-light rounded" method="post" action="<?php echo site_url('/login'); ?>">
         <div class="mb-4">
-            <input class="__inputBase border-purple-dark" name="log" id="log" type="text" placeholder="Usuario">
+            <input class="__inputBase border-purple-dark" name="log" id="log" type="text" placeholder="Correo electrónico">
         </div>
         <div class="mb-6">
             <input class="__inputBase border-purple-dark" name="pwd" id="pwd" type="password" placeholder="********">
