@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <form class="w-full max-w-3xl mx-auto mx-auto flex flex-wrap overflow-hidden md:px-12" method="post" action="">
+        <form class="w-full max-w-lg mx-auto mx-auto p-6 flex flex-wrap overflow-hidden md:px-12" method="post"style="background-color: rgb(231, 232, 233);" action="">
             <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
                 <div class="w-full px-3">
                     <input v-model="internal_user.first_name" class="__inputBase" name="user_firstname" id="user_firstname" type="text" placeholder="Nombre">
@@ -26,13 +26,13 @@
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
-            <div v-if="mode === 'profile'" class="max-w-1/2 w-1/2 mb-3 pr-2 md:mb-6">
+            <div v-if="mode === 'profile'">
                 <div class="w-full px-3">
                     <input v-model="internal_user.age" class="__inputBase" name="age" id="age" type="text" placeholder="Edad">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
-            <div v-if="mode === 'profile'" class="max-w-1/2 w-1/2 mb-3 md:mb-6">
+            <div v-if="mode === 'profile'">
                 <div class="w-full px-3">
                     <div class="relative">
                         <select v-model="internal_user.gender" name="user_gender" id="user_gender" placeholder="Sexo" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
@@ -49,21 +49,14 @@
                 </div>
             </div>
 
-            <div v-if="mode === 'profile'" class="w-full mb-3 ml-4">
-                <label class="block text-gray-500 font-bold">
-                    <input class="mr-2 leading-tight" type="checkbox" v-model="internal_user.has_degree" value="true" name="education_degree">
-                    <span class="text-sm text-base font-hairline">Lic. / Dr. / PhD. / Etc. (Se solicitará verificación)</span>
-                </label>
-            </div>
-
-            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
+            <div :class="signup_mode?'w-full mb-4':'w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6'">
                 <div class="w-full px-3">
                     <input v-show="mode!== 'profile'" v-model="internal_user.user_email" class="__inputBase" name="user_email" id="user_email" type="text" placeholder="Correo electrónico *">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
 
-            <div class="w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6">
+            <div :class="signup_mode?'w-full mb-4':'w-full md:max-w-1/2 md:w-1/2 mb-3 md:mb-6'">
                 <div class="w-full px-3">
                     <input v-show="mode!== 'profile'" class="__inputBase" name="user_pass" id="user_pass" type="password" placeholder="Contraseña *">
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
@@ -101,7 +94,7 @@
             </div>
 
             <div class="w-full px-3 mb-3 mt-3 md:mb-0 flex md:justify-start justify-center">
-                <input :type="mode === 'profile' ? 'button' : 'submit'" @click="submitForm" :value="mode !== 'profile' ? '¡Crea tu cuenta!' : 'Actualizar datos'" class="block md:ml-0 md:mr-auto m-auto min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-light py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <input :type="mode === 'profile' ? 'button' : 'submit'" @click="submitForm" :value="mode !== 'profile' ? '¡Crea tu cuenta!' : 'Actualizar datos'" :class="signup_mode?'block m-auto min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-light py-2 px-4 rounded focus:outline-none focus:shadow-outline':'block md:ml-0 md:mr-auto m-auto min-w-1/12 cursor-pointer bg-purple-dark text-white hover:bg-purple-light hover:shadow-md hover:text-purple-dark font-light py-2 px-4 rounded focus:outline-none focus:shadow-outline'">
             </div>
 
         </form>
@@ -201,7 +194,12 @@
         },
 
         computed: {
-
+			profile_mode: function(){
+				return this.mode === "profile";
+			},
+			signup_mode: function(){
+				return this.mode !== "profile";
+			}
         }
 
     }

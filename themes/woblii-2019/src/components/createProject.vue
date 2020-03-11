@@ -40,13 +40,7 @@ import Swal from "sweetalert2";
 
             <div class="w-full mb-3 md:mb-6">
                 <div class="w-full px-3">
-                    <input v-model="internal_project.seed_money" class="__inputBase" name="seed_money" id="seed_money" type="text" placeholder="¿Qué capital necesitas para empezar?">
-                    <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
-                </div>
-            </div>
-            <div class="w-full mb-3 md:mb-6">
-                <div class="w-full px-3">
-                    <input v-model="internal_project.participation_percentage" class="__inputBase" name="participation_percentage" id="participation_percentage" type="text" placeholder="Porcentaje de participación por el capital que pides">
+					<textarea v-model="internal_project.participation_percentage" name="participation_percentage" id="participation_percentage" class="__inputBase resize-none" placeholder="¿Ofreces equity o algún tipo de retorno de inversión?" cols="30" rows="4"></textarea>
                     <p class="hidden text-red-500 text-xs italic">Este campo es requerido.</p>
                 </div>
             </div>
