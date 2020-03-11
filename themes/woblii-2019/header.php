@@ -75,7 +75,7 @@
                         <?php if(! is_user_logged_in()): ?>
                             <ul class="list-none w-full text-purple-text pd-0 mb-6">
                                 <li class="block leading-loose mt-6 mb-6 font-body font-hairline text-sm hover:text-purple-text">
-                                    <a class="leading-relaxed" href="<?php echo site_url('signup'); ?>">Registro Entrepreneur</a>
+                                    <a class="leading-relaxed" href="<?php echo site_url('signup'); ?>">Registro Emprendedor</a>
                                 </li>
                                 <li class="block leading-loose mt-6 mb-6 font-body font-hairline text-sm hover:text-purple-text">
                                     <a class="leading-relaxed" href="<?php echo site_url('signup-investor'); ?>">Registro Inversionista</a>

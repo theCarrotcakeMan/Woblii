@@ -8,17 +8,19 @@
         <?php wp_footer(); ?>
 
     </body>
-	<script>
-		$(function() {
-			$.scrollify({
-				section : ".snapable-window",
-				setHeights: true,
-			    overflowScroll: true,
-			    updateHash: true,
-			    touchScroll: false
+	<?php if(is_page('login')): ?>
+		<script>
+			$(function() {
+				$.scrollify({
+					section : ".snapable-window",
+					setHeights: true,
+				    overflowScroll: true,
+				    updateHash: false,
+				    touchScroll: false
+				});
 			});
-		});
-	</script>
+		</script>
+	<?php endif; ?>
     <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
     <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
 

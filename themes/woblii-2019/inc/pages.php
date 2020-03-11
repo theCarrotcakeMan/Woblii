@@ -5,7 +5,7 @@
 
 
 	add_action('init', function(){
-  
+
 		// Home
 		if( ! get_page_by_path('home') ){
 			$page = array(
@@ -44,7 +44,7 @@
 			$page = array(
 				'post_author' => 1,
 				'post_status' => 'publish',
-				'post_title'  => 'Regístrate como Entrepreneur en Woblii',
+				'post_title'  => 'Regístrate como Emprendedor en Woblii',
 				'post_name'   => 'signup',
 				'post_type'   => 'page'
 			);
@@ -72,7 +72,7 @@
 			);
 			wp_insert_post( $page, true );
 		}
-  
+
 		// Log-in
 		if( ! get_page_by_path('login') ){
 			$page = array(
@@ -84,7 +84,7 @@
 			);
 			wp_insert_post( $page, true );
 		}
-  
+
 		// Profile page
 		if( ! get_page_by_path('profile') ){
 			$page = array(
@@ -96,7 +96,7 @@
 			);
 			wp_insert_post( $page, true );
 		}
-  
+
 		// Complete your Profile page
 		if( ! get_page_by_path('complete-profile') ){
 			$page = array(
@@ -108,7 +108,7 @@
 			);
 			wp_insert_post( $page, true );
 		}
-  
+
 		// Create project page
 		if( ! get_page_by_path('create-project') ){
 			$page = array(
@@ -120,7 +120,7 @@
 			);
 			wp_insert_post( $page, true );
 		}
-  
+
 		// Manage projects page
 		if( ! get_page_by_path('manage-projects') ){
 			$page = array(
@@ -132,7 +132,7 @@
 			);
 			wp_insert_post( $page, true );
 		}
-  
+
 		// Interactions page
 		if( ! get_page_by_path('interactions') ){
 			$page = array(
