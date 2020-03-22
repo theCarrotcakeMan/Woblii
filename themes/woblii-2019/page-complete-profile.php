@@ -1,4 +1,4 @@
-<?php
+	<?php
 
     // Redirect user if already logged in
     if(!is_user_logged_in()){

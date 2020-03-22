@@ -115,6 +115,16 @@ p{
     background-position: -588px -214px;
     background-size: 860px;
 }
+.customIcons.wobliitv{
+    width: 40px;
+    height: 40px;
+    background-position: -334px -8px;
+}
+.customIcons.wobliishop{
+    width: 40px;
+    height: 40px;
+    background-position: -334px -8px;
+}
 
 .toggle-input {
     display: none;

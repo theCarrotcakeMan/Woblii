@@ -298,10 +298,12 @@ add_action( 'pre_get_posts', function($query){
         $attrs['first_name'] = $attrs['user_firstname'];
         $attrs['last_name'] = $attrs['user_lastname'];
         $result = wp_insert_user($attrs);
-        if( !is_wp_error($result) )
-            wp_redirect( site_url('login?message=Cuenta+creada+exitosamente.+Ahora+puedes+acceder+a+Woblii.'));
-        exit;
-        wp_redirect( site_url('?error=Error!') );
+        if( !is_wp_error($result) ){
+
+			wp_redirect( site_url('login?message=Cuenta+creada+exitosamente.+Ahora+puedes+acceder+a+Woblii.'));
+			exit;
+		}
+        wp_redirect( site_url('login?message=Error!+verifica+tus+datos&error=true') );
         exit;
     }
 
@@ -408,7 +410,7 @@ add_action( 'pre_get_posts', function($query){
         $currentUser->data->nickname    = get_user_meta($currentUser->ID, "nickname", TRUE);
         $currentUser->data->line_of_business    = get_user_meta($currentUser->ID, "line_of_business", TRUE);
         $line_term = get_term( $currentUser->data->line_of_business, 'line-of-business');
-        $currentUser->data->line_of_business_pretty    = $line_term->name;
+        $currentUser->data->line_of_business_pretty    = !is_wp_error($line_term) ? $line_term->name : NULL;
         $currentUser->data->gender    = get_user_meta($currentUser->ID, "gender", TRUE);
         $currentUser->data->has_degree  = get_user_meta($currentUser->ID, "has_degree", TRUE);
 

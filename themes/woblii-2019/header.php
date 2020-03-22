@@ -62,6 +62,13 @@
                                 </div>
                             </form>
                         </nav>
+						<section class="lg:block mt-3 ml-3">
+							<a href="#" class="inline-block" title="WobliiTv visita nuestro canal de YouTube"><i class="customIcons wobliitv"></i></a>
+							<a href="#" class="inline-block" title="WobliiShop"><i class="customIcons wobliishop"></i></a>
+						</section>
+						<div class="relative inline-block">
+							<a class="leading-relaxed inline-block" href="<?php echo wp_logout_url( site_url() ); ?>">Salir</a>
+						</div>
                     <?php endif; ?>
 
                     <label for="open_menu" title="Abrir menú principal" class="inline-block lg:hidden text-purple-text text-2xl focus:text-purple-light m-2 toggle-label select-none" id="mobileMenuTrigger">

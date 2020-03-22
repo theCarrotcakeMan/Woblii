@@ -2,7 +2,7 @@
 
     <div id="whatIsWoblii" data-section-name="Registrate" class="snapable-window relative w-full max-w-5xl mx-auto mt-16 mb-12 md:mb-0 p-4 md:p-1">
 
-		<section class="">
+		<section class="md:mt-8">
 
             <h3 class="font-light p-4 md:p-8 text-lg md:text-2xl">Elige el perfil que se apegue a tus necesidades</h3>
 
