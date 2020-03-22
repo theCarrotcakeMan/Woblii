@@ -88,10 +88,10 @@
                         <?php else: ?>
                             <ul class="list-none w-full text-purple-text pd-0">
                                 <li class="block leading-loose mt-6 mb-6 font-body font-hairline text-sm hover:text-purple-text">
-                                    <a class="leading-relaxed" href="<?php echo wp_logout_url( site_url('my-feed') ); ?>">Feed</a>
+                                    <a class="leading-relaxed" href="<?php echo site_url('my-feed'); ?>">Feed</a>
                                 </li>
                                 <li class="block leading-loose mt-6 mb-6 font-body font-hairline text-sm hover:text-purple-text">
-                                    <a class="leading-relaxed" href="<?php echo wp_logout_url( site_url('profile') ); ?>">Información de perfil</a>
+                                    <a class="leading-relaxed" href="<?php echo site_url('profile'); ?>">Información de perfil</a>
                                 </li>
                                 <li class="block leading-loose mt-6 mb-6 font-body font-hairline text-sm hover:text-purple-text">
                                     <a class="leading-relaxed" href="<?php echo wp_logout_url( site_url() ); ?>">Salir</a>
